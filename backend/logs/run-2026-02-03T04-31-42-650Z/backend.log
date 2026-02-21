@@ -1,0 +1,13 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-03T04-31-42-650Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+✅ Coordinator Agent initialized with Gemini 3 Pro
+📊 Starting analysis task: Analyze Bitcoin market conditions and identify trading opportunities
+🚀 Starting Marathon Task: d3f876d3-1dc7-4311-9c0e-7afb79c83867
+📋 Goal: Analyze Bitcoin market conditions and identify trading opportunities
+🧠 Phase 1: Planning with Gemini 3 Pro...
+❌ Task d3f876d3-1dc7-4311-9c0e-7afb79c83867 failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro:generateContent: [404 Not Found] models/gemini-3-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[browserManager] Received SIGINT, cleaning up browser resources...

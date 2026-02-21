@@ -1,0 +1,76 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-21T20-15-32-347Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+📊 Starting analysis task: Analyze Bitcoin for the next 1 minutes and identify trading opportunities
+✅ Market Monitor Agent initialized
+✅ News Sentiment Agent initialized
+✅ On-Chain Analysis Agent initialized
+✅ Strategy Generator Agent initialized
+✅ Coordinator Agent initialized with NVIDIA Nemotron
+🚀 Starting Marathon Task: 6ea81d97-94e5-410e-9565-9e1457de17a2
+📋 Goal: Analyze Bitcoin for the next 1 minutes and identify trading opportunities
+🧠 Phase 1: Planning with NVIDIA Nemotron...
+📝 Generated 5 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Real-Time Price & Volume Tracking (market_monitor)
+    [market_monitor] Processing: Monitor Bitcoin price (BTC/USD) on major exchanges (Binance, Coinbase) with 1-minute intervals. Track volume spikes and order book depth to identify liquidity imbalances.
+[MarketMonitorAgent] Processing: Monitor Bitcoin price (BTC/USD) on major exchanges (Binance, Coinbase) with 1-minute intervals. Track volume spikes and order book depth to identify liquidity imbalances.
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 68499 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $68499
+  → Executing: Technical Indicator Calculation (market_monitor)
+    [market_monitor] Processing: Calculate 5-minute and 15-minute EMA (Exponential Moving Averages), RSI (14-period), and MACD (12,26,9) on BTC/USD pairs. Flag divergences between price and indicators.
+[MarketMonitorAgent] Processing: Calculate 5-minute and 15-minute EMA (Exponential Moving Averages), RSI (14-period), and MACD (12,26,9) on BTC/USD pairs. Flag divergences between price and indicators.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 68499 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $68499
+  → Executing: News & Social Media Scraping (news_sentiment)
+    [news_sentiment] Processing: Scrape real-time crypto news from CoinDesk, Coindesk, and CryptoPanic. Analyze Twitter/X and Reddit for Bitcoin-related sentiment using NLP tools. Prioritize mentions of price targets or regulatory updates.
+[NewsSentimentAgent] Processing: Scrape real-time crypto news from CoinDesk, Coindesk, and CryptoPanic. Analyze Twitter/X and Reddit for Bitcoin-related sentiment using NLP tools. Prioritize mentions of price targets or regulatory updates.
+[NewsSentimentAgent] Analysis complete for BTC: bullish (65% confidence)
+💾 Checkpoint saved: Completed News & Social Media Scraping
+  → Executing: On-Chain Whale Activity Monitoring (onchain_analysis)
+    [onchain_analysis] Processing: Track large Bitcoin transactions (>1,000 BTC) via blockchain explorers (Etherscan, Blockchair). Analyze exchange inflows/outflows from Binance and Coinbase. Check mempool congestion for transaction delays.
+[OnChainAnalysisAgent] Processing: Track large Bitcoin transactions (>1,000 BTC) via blockchain explorers (Etherscan, Blockchair). Analyze exchange inflows/outflows from Binance and Coinbase. Check mempool congestion for transaction delays.
+[OnChainAnalysisAgent] Analysis complete for BTC: 6 whale transactions
+  → Executing: Strategy Synthesis & Trade Recommendation (strategy_generator)
+    [strategy_generator] Processing: Aggregate data from all sources to identify actionable signals (e.g., bullish divergence + positive news + whale accumulation). Generate buy/sell/hold recommendations with risk parameters (stop-loss, take-profit).
+[StrategyGeneratorAgent] Processing: Aggregate data from all sources to identify actionable signals (e.g., bullish divergence + positive news + whale accumulation). Generate buy/sell/hold recommendations with risk parameters (stop-loss, take-profit).
+[RateLimiter] Rate limit reached (5/5). Waiting 15s...
+[StrategyGeneratorAgent] Strategy generated for BTC: BUY (65% confidence)
+💡 Phase 3: Synthesizing insights...
+[RateLimiter] Rate limit reached (5/5). Waiting 5s...
+💡 Insights synthesized
+✓ Phase 4: Verifying findings...
+✓ Verification complete - Confidence: 0.45
+💾 Checkpoint saved: Task completed successfully
+✅ Task 6ea81d97-94e5-410e-9565-9e1457de17a2 completed in 2m 0s
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Browser disconnected, will restart on next request

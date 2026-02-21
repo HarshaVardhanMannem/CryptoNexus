@@ -1,0 +1,28 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-03T03-21-15-146Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1770088886179-d4hkcm92c subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[ConnectRpcService] Error starting scraper for BTCUSD: browserType.launch: Executable doesn't exist at C:\Users\harsh\AppData\Local\ms-playwright\chromium-1187\chrome-win\chrome.exe
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     pnpm exec playwright install                                        ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+    at getBrowser [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\browserManager.ts:13:28[90m)[39m
+    at getContextForSymbol [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\browserManager.ts:66:25[90m)[39m
+    at createTickerScraper [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:8:41[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\services\connectRpcService.ts:229:29[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\services\connectRpcService.ts:60:29[90m)[39m
+    at serverStreaming_1 (C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\node_modules\[4m.pnpm[24m\@bufbuild+connect@0.11.0_@bufbuild+protobuf@1.10.1\node_modules\[4m@bufbuild[24m\connect\dist\cjs\protocol\invoke-implementation.js:84:125)
+    at resume (C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\node_modules\[4m.pnpm[24m\@bufbuild+connect@0.11.0_@bufbuild+protobuf@1.10.1\node_modules\[4m@bufbuild[24m\connect\dist\cjs\protocol\invoke-implementation.js:21:43)
+    at fulfill (C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\node_modules\[4m.pnpm[24m\@bufbuild+connect@0.11.0_@bufbuild+protobuf@1.10.1\node_modules\[4m@bufbuild[24m\connect\dist\cjs\protocol\invoke-implementation.js:23:31) {
+  name: [32m'Error'[39m
+}
+[browserManager] Received SIGINT, cleaning up browser resources...

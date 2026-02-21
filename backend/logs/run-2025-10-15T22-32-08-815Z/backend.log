@@ -1,0 +1,7 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-10-15T22-32-08-815Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[browserManager] Received SIGINT, cleaning up browser resources...

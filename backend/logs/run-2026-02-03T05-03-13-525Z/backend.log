@@ -1,0 +1,83 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-03T05-03-13-525Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+✅ Market Monitor Agent initialized
+✅ News Sentiment Agent initialized
+✅ On-Chain Analysis Agent initialized
+✅ Strategy Generator Agent initialized
+✅ Coordinator Agent initialized with Gemini 3 Flash Preview
+📊 Starting analysis task: Analyze Bitcoin for trading opportunities based on current market trends, sentiment, and on-chain activity
+🚀 Starting Marathon Task: c5f98973-2963-406d-be00-dd3c6074e72e
+📋 Goal: Analyze Bitcoin for trading opportunities based on current market trends, sentiment, and on-chain activity
+🧠 Phase 1: Planning with Gemini 3 Pro...
+📝 Generated 7 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: BTC Technical Trend & Momentum Analysis (market_monitor)
+    [market_monitor] Processing: Analyze BTC/USDT price action on 4H and 1D timeframes. Track RSI for overbought/oversold conditions, MACD for momentum shifts, and identify key horizontal support/resistance levels. Evaluate volume profiles to confirm the strength of recent price moves.
+[MarketMonitorAgent] Processing: Analyze BTC/USDT price action on 4H and 1D timeframes. Track RSI for overbought/oversold conditions, MACD for momentum shifts, and identify key horizontal support/resistance levels. Evaluate volume profiles to confirm the strength of recent price moves.
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 78694.45 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $78694.45
+  → Executing: Liquidation Heatmap & Order Book Depth (market_monitor)
+    [market_monitor] Processing: Examine high-leverage liquidation clusters using aggregate exchange data. Identify 'magnetic' price zones where large liquidations are likely to occur and assess order book depth to determine potential slippage and volatility triggers.
+[MarketMonitorAgent] Processing: Examine high-leverage liquidation clusters using aggregate exchange data. Identify 'magnetic' price zones where large liquidations are likely to occur and assess order book depth to determine potential slippage and volatility triggers.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 78654.35 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $78654.35
+  → Executing: Global Macro & Regulatory News Scraping (news_sentiment)
+    [news_sentiment] Processing: Scrape Cointelegraph, CoinDesk, and Bloomberg Crypto for updates on Spot BTC ETF inflows/outflows, SEC regulatory shifts, and FOMC interest rate announcements that impact Bitcoin's narrative.
+[NewsSentimentAgent] Processing: Scrape Cointelegraph, CoinDesk, and Bloomberg Crypto for updates on Spot BTC ETF inflows/outflows, SEC regulatory shifts, and FOMC interest rate announcements that impact Bitcoin's narrative.
+[NewsSentimentAgent] Analysis complete for BTC: neutral (65% confidence)
+💾 Checkpoint saved: Completed Global Macro & Regulatory News Scraping
+  → Executing: Social Sentiment & Fear/Greed Indexing (news_sentiment)
+    [news_sentiment] Processing: Aggregate data from X (Twitter) and Reddit (r/CryptoCurrency) to calculate a weighted sentiment score. Cross-reference with the Crypto Fear & Greed Index to identify potential local market tops (extreme greed) or bottoms (extreme fear).
+[NewsSentimentAgent] Processing: Aggregate data from X (Twitter) and Reddit (r/CryptoCurrency) to calculate a weighted sentiment score. Cross-reference with the Crypto Fear & Greed Index to identify potential local market tops (extreme greed) or bottoms (extreme fear).
+[NewsSentimentAgent] Analysis complete for BTC: bullish (78% confidence)
+  → Executing: Whale Movement & Exchange Net Flow Analysis (onchain_analysis)
+    [onchain_analysis] Processing: Analyze Glassnode/CryptoQuant data for BTC exchange net flows (inflows vs. outflows). Monitor 'Whale Alert' for transfers larger than 1,000 BTC to identify potential distribution or accumulation phases by long-term holders.
+[OnChainAnalysisAgent] Processing: Analyze Glassnode/CryptoQuant data for BTC exchange net flows (inflows vs. outflows). Monitor 'Whale Alert' for transfers larger than 1,000 BTC to identify potential distribution or accumulation phases by long-term holders.
+[OnChainAnalysisAgent] Analysis complete for BTC: 6 whale transactions
+  → Executing: MVRV Z-Score & Network Health Assessment (onchain_analysis)
+    [onchain_analysis] Processing: Evaluate the Market Value to Realized Value (MVRV) Z-Score to determine if BTC is overvalued or undervalued relative to its 'fair value'. Track active address growth and network hash rate to confirm the underlying health of the protocol.
+[OnChainAnalysisAgent] Processing: Evaluate the Market Value to Realized Value (MVRV) Z-Score to determine if BTC is overvalued or undervalued relative to its 'fair value'. Track active address growth and network hash rate to confirm the underlying health of the protocol.
+[OnChainAnalysisAgent] Analysis complete for BTC: 4 whale transactions
+💾 Checkpoint saved: Completed MVRV Z-Score & Network Health Assessment
+  → Executing: Cross-Data Correlation & Risk-Adjusted Strategy (strategy_generator)
+    [strategy_generator] Processing: Synthesize technical signals, sentiment peaks, and on-chain whale activity. Formulate a trading plan with specific Entry (Limit/Market), Take-Profit (TP), and Stop-Loss (SL) levels. Include a 'Risk-of-Ruin' assessment based on current volatility.
+[StrategyGeneratorAgent] Processing: Synthesize technical signals, sentiment peaks, and on-chain whale activity. Formulate a trading plan with specific Entry (Limit/Market), Take-Profit (TP), and Stop-Loss (SL) levels. Include a 'Risk-of-Ruin' assessment based on current volatility.
+[StrategyGeneratorAgent] Strategy generated for BTC: SELL (72% confidence)
+💡 Phase 3: Synthesizing insights...
+💡 Insights synthesized
+✓ Phase 4: Verifying findings...
+✓ Verification complete - Confidence: 0.45
+💾 Checkpoint saved: Task completed successfully
+✅ Task c5f98973-2963-406d-be00-dd3c6074e72e completed in 2m 11s
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Browser disconnected, will restart on next request

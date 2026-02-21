@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package crypto.ticker;
+option go_package = "crypto/ticker;cryptoticker";
+
+// Request to subscribe/unsubscribe to a ticker symbol (e.g. BTCUSD)
+message TickerRequest {
+  string symbol = 1;
+}
+
+// Server-side streamed price update
+message PriceUpdate {
+  string symbol = 1;
+  double price = 2;
+  string iso_timestamp = 3; 
+}
+
+// Service exposed to frontend clients
+service TickerService {
+  // Client asks to subscribe to a single ticker; server streams PriceUpdate
+  rpc SubscribeTicker (TickerRequest) returns (stream PriceUpdate);
+
+  // Simple RPC to tell server to stop tracking a ticker for this client
+  rpc UnsubscribeTicker (TickerRequest) returns (PriceUpdate);
+}

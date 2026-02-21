@@ -1,0 +1,220 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-10T16-09-28-819Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+📊 Starting analysis task: Find scalping opportunities for Bitcoin based on recent market trends
+✅ Market Monitor Agent initialized
+✅ News Sentiment Agent initialized
+✅ On-Chain Analysis Agent initialized
+✅ Strategy Generator Agent initialized
+✅ Coordinator Agent initialized with NVIDIA Nemotron
+🚀 Starting Marathon Task: 183c16df-09e4-4ba0-9398-6bd86eecc917
+📋 Goal: Find scalping opportunities for Bitcoin based on recent market trends
+🧠 Phase 1: Planning with NVIDIA Nemotron...
+📝 Generated 9 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Track BTC/USD price and volume on Binance 1-minute intervals (market_monitor)
+    [market_monitor] Processing: Monitor real-time price movements and trading volume for Bitcoin (BTC) on Binance using 1-minute candlestick charts to identify short-term scalping patterns.
+[MarketMonitorAgent] Processing: Monitor real-time price movements and trading volume for Bitcoin (BTC) on Binance using 1-minute candlestick charts to identify short-term scalping patterns.
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 69031.75 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $69031.75
+  → Executing: Analyze BTC/USD 5-minute EMA (Exponential Moving Average) crossover (market_monitor)
+    [market_monitor] Processing: Calculate and track 5-period and 20-period EMA crossovers on BTC/USD 5-minute charts to detect potential entry/exit signals.
+[MarketMonitorAgent] Processing: Calculate and track 5-period and 20-period EMA crossovers on BTC/USD 5-minute charts to detect potential entry/exit signals.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 69031.75 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $69031.75
+  → Executing: Monitor BTC/USD RSI (Relative Strength Index) for overbought/oversold levels (market_monitor)
+    [market_monitor] Processing: Track RSI (14-period) on BTC/USD charts to identify potential reversal points when RSI exceeds 70 (overbought) or drops below 30 (oversold).
+[MarketMonitorAgent] Processing: Track RSI (14-period) on BTC/USD charts to identify potential reversal points when RSI exceeds 70 (overbought) or drops below 30 (oversold).
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 69106.86 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $69106.86
+💾 Checkpoint saved: Completed Monitor BTC/USD RSI (Relative Strength Index) for overbought/oversold levels
+  → Executing: Scrape real-time BTC trading volume from CoinGecko (market_monitor)
+    [market_monitor] Processing: Fetch and analyze Bitcoin trading volume data from CoinGecko to detect unusual spikes or dips that could indicate market momentum.
+[MarketMonitorAgent] Processing: Fetch and analyze Bitcoin trading volume data from CoinGecko to detect unusual spikes or dips that could indicate market momentum.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 69106.86 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $69106.86
+  → Executing: Monitor BTC-related news from Coindesk and CoinTelegraph (news_sentiment)
+    [news_sentiment] Processing: Scrape headlines and summaries from Coindesk and CoinTelegraph for BTC-related news that could impact price volatility.
+[NewsSentimentAgent] Processing: Scrape headlines and summaries from Coindesk and CoinTelegraph for BTC-related news that could impact price volatility.
+[RateLimiter] Rate limit reached (5/5). Waiting 8s...
+[NewsSentimentAgent] Analysis complete for BTC: neutral (65% confidence)
+  → Executing: Analyze social sentiment on X (Twitter) using BTC hashtags (news_sentiment)
+    [news_sentiment] Processing: Track real-time sentiment on X (Twitter) using hashtags like #Bitcoin and #BTC to gauge retail and institutional investor mood.
+[NewsSentimentAgent] Processing: Track real-time sentiment on X (Twitter) using hashtags like #Bitcoin and #BTC to gauge retail and institutional investor mood.
+[RateLimiter] Rate limit reached (5/5). Waiting 5s...
+[NewsSentimentAgent] Analysis complete for BTC: neutral (65% confidence)
+💾 Checkpoint saved: Completed Analyze social sentiment on X (Twitter) using BTC hashtags
+  → Executing: Check BTC whale transactions via Glassnode (onchain_analysis)
+    [onchain_analysis] Processing: Analyze on-chain data from Glassnode to detect large BTC transfers (>100 BTC) that may indicate institutional activity or market manipulation.
+[OnChainAnalysisAgent] Processing: Analyze on-chain data from Glassnode to detect large BTC transfers (>100 BTC) that may indicate institutional activity or market manipulation.
+[RateLimiter] Rate limit reached (5/5). Waiting 8s...
+[OnChainAnalysisAgent] Analysis complete for BTC: 5 whale transactions
+  → Executing: Track BTC exchange inflows/outflows (onchain_analysis)
+    [onchain_analysis] Processing: Monitor exchange flow data (e.g., from Binance or Coinbase) to identify large BTC movements into or out of exchanges, which could signal price direction.
+[OnChainAnalysisAgent] Processing: Monitor exchange flow data (e.g., from Binance or Coinbase) to identify large BTC movements into or out of exchanges, which could signal price direction.
+[RateLimiter] Rate limit reached (5/5). Waiting 6s...
+[OnChainAnalysisAgent] Analysis complete for BTC: 2 whale transactions
+  → Executing: Synthesize market, news, and on-chain data into scalping strategy (strategy_generator)
+    [strategy_generator] Processing: Combine signals from market indicators, news sentiment, and on-chain activity to generate actionable scalping rules (e.g., 'buy when RSI < 30 and positive news sentiment').
+[StrategyGeneratorAgent] Processing: Combine signals from market indicators, news sentiment, and on-chain activity to generate actionable scalping rules (e.g., 'buy when RSI < 30 and positive news sentiment').
+[RateLimiter] Rate limit reached (5/5). Waiting 7s...
+[StrategyGeneratorAgent] Strategy generated for BTC: BUY (65% confidence)
+💾 Checkpoint saved: Completed Synthesize market, news, and on-chain data into scalping strategy
+💡 Phase 3: Synthesizing insights...
+[RateLimiter] Rate limit reached (5/5). Waiting 9s...
+💡 Insights synthesized
+✓ Phase 4: Verifying findings...
+✓ Verification complete - Confidence: 0.6
+💾 Checkpoint saved: Task completed successfully
+✅ Task 183c16df-09e4-4ba0-9398-6bd86eecc917 completed in 2m 49s
+📊 Starting analysis task: Analyze Ethereum trading opportunities with focus on DeFi trends
+🚀 Starting Marathon Task: dbac225f-f575-42c2-b906-225a100710e2
+📋 Goal: Analyze Ethereum trading opportunities with focus on DeFi trends
+🧠 Phase 1: Planning with NVIDIA Nemotron...
+📝 Generated 9 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Track ETH/USD price action across 15min, 1h, 4h, and daily timeframes (market_monitor)
+    [market_monitor] Processing: Monitor real-time price data for Ethereum (ETH/USD) using sources like Binance, Coinbase, and Kraken. Focus on key support/resistance levels, volatility patterns, and potential breakout signals.
+[MarketMonitorAgent] Processing: Monitor real-time price data for Ethereum (ETH/USD) using sources like Binance, Coinbase, and Kraken. Focus on key support/resistance levels, volatility patterns, and potential breakout signals.
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Started scraping ETHUSD
+[scraper] Got immediate price 2034.07 for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[scraper] Fatal error in scraping loop for ETHUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for ETHUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[MarketMonitorAgent] Analysis complete for ETHUSD: $2034.07
+  → Executing: Analyze ETH trading volume and open interest on major exchanges (market_monitor)
+    [market_monitor] Processing: Track 24h and 7d volume trends for ETH/USD pairs on Binance, Coinbase, and Kraken. Correlate volume spikes with price movements to identify potential manipulation or institutional activity.
+[MarketMonitorAgent] Processing: Track 24h and 7d volume trends for ETH/USD pairs on Binance, Coinbase, and Kraken. Correlate volume spikes with price movements to identify potential manipulation or institutional activity.
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Started scraping ETHUSD
+[scraper] Got immediate price 2032.68 for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[scraper] Fatal error in scraping loop for ETHUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for ETHUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[MarketMonitorAgent] Analysis complete for ETHUSD: $2032.68
+  → Executing: Calculate technical indicators for ETH price trends (market_monitor)
+    [market_monitor] Processing: Compute RSI (14), MACD (12,26,9), Bollinger Bands (20,2), and moving averages (50,200 EMA) for ETH/USD across all timeframes. Identify overbought/oversold conditions and trend reversals.
+[MarketMonitorAgent] Processing: Compute RSI (14), MACD (12,26,9), Bollinger Bands (20,2), and moving averages (50,200 EMA) for ETH/USD across all timeframes. Identify overbought/oversold conditions and trend reversals.
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Started scraping ETHUSD
+[scraper] Got immediate price 2034.31 for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[scraper] Fatal error in scraping loop for ETHUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for ETHUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[MarketMonitorAgent] Analysis complete for ETHUSD: $2034.31
+💾 Checkpoint saved: Completed Calculate technical indicators for ETH price trends
+  → Executing: Scrape DeFi news from Coindesk, The Block, and Cointelegraph (news_sentiment)
+    [news_sentiment] Processing: Extract articles and announcements related to Ethereum upgrades (e.g., EIP-4844), DeFi protocol launches, or regulatory changes affecting DeFi. Prioritize news impacting ETH staking yields or layer-2 adoption.
+[NewsSentimentAgent] Processing: Extract articles and announcements related to Ethereum upgrades (e.g., EIP-4844), DeFi protocol launches, or regulatory changes affecting DeFi. Prioritize news impacting ETH staking yields or layer-2 adoption.
+[NewsSentimentAgent] Analysis complete for ETH: bullish (75% confidence)
+  → Executing: Monitor social media sentiment on Twitter and Reddit (news_sentiment)
+    [news_sentiment] Processing: Analyze tweets from Ethereum Foundation, DeFi influencers (e.g., @Uniswap, @Aave), and Reddit threads (e.g., r/ethfinance, r/CryptoCurrency). Track keywords like 'ETH', 'DeFi', 'staking', and 'yield farming' for bullish/bearish sentiment.
+[NewsSentimentAgent] Processing: Analyze tweets from Ethereum Foundation, DeFi influencers (e.g., @Uniswap, @Aave), and Reddit threads (e.g., r/ethfinance, r/CryptoCurrency). Track keywords like 'ETH', 'DeFi', 'staking', and 'yield farming' for bullish/bearish sentiment.
+[RateLimiter] Rate limit reached (5/5). Waiting 15s...
+[NewsSentimentAgent] Analysis complete for ETH: bullish (75% confidence)
+  → Executing: Monitor whale ETH transfers (>1,000 ETH) on Etherscan (onchain_analysis)
+    [onchain_analysis] Processing: Track large ETH movements between wallets, exchanges, and DeFi protocols. Flag transfers from known institutional wallets or DeFi platforms like Uniswap/V3, Aave, or MakerDAO.
+[OnChainAnalysisAgent] Processing: Track large ETH movements between wallets, exchanges, and DeFi protocols. Flag transfers from known institutional wallets or DeFi platforms like Uniswap/V3, Aave, or MakerDAO.
+[RateLimiter] Rate limit reached (5/5). Waiting 5s...
+[OnChainAnalysisAgent] Analysis complete for ETH: 5 whale transactions
+💾 Checkpoint saved: Completed Monitor whale ETH transfers (>1,000 ETH) on Etherscan
+  → Executing: Analyze exchange inflows/outflows for ETH (onchain_analysis)
+    [onchain_analysis] Processing: Monitor daily ETH deposits/withdrawals from major exchanges (Binance, Coinbase) and compare with historical averages. Identify accumulation/distribution patterns that may signal price movements.
+[OnChainAnalysisAgent] Processing: Monitor daily ETH deposits/withdrawals from major exchanges (Binance, Coinbase) and compare with historical averages. Identify accumulation/distribution patterns that may signal price movements.
+[RateLimiter] Rate limit reached (5/5). Waiting 7s...
+[OnChainAnalysisAgent] Analysis complete for ETH: 6 whale transactions
+  → Executing: Track TVL and active users in top DeFi protocols (onchain_analysis)
+    [onchain_analysis] Processing: Monitor real-time TVL for Ethereum-based DeFi protocols (Uniswap, Aave, Curve, MakerDAO) and track daily active users. Correlate TVL growth with ETH price movements to identify DeFi-driven demand.
+[OnChainAnalysisAgent] Processing: Monitor real-time TVL for Ethereum-based DeFi protocols (Uniswap, Aave, Curve, MakerDAO) and track daily active users. Correlate TVL growth with ETH price movements to identify DeFi-driven demand.
+[RateLimiter] Rate limit reached (5/5). Waiting 10s...
+[OnChainAnalysisAgent] Analysis complete for ETH: 4 whale transactions
+  → Executing: Synthesize market, news, and on-chain data into trading signals (strategy_generator)
+    [strategy_generator] Processing: Combine price action, sentiment analysis, and on-chain metrics to generate actionable insights (e.g., 'Buy ETH if Uniswap TVL grows 5% with positive Reddit sentiment'). Prioritize signals aligned with DeFi trends (e.g., staking yields, layer-2 adoption).
+[StrategyGeneratorAgent] Processing: Combine price action, sentiment analysis, and on-chain metrics to generate actionable insights (e.g., 'Buy ETH if Uniswap TVL grows 5% with positive Reddit sentiment'). Prioritize signals aligned with DeFi trends (e.g., staking yields, layer-2 adoption).
+[StrategyGeneratorAgent] Strategy generated for ETH: BUY (68% confidence)
+💾 Checkpoint saved: Completed Synthesize market, news, and on-chain data into trading signals
+💡 Phase 3: Synthesizing insights...
+[RateLimiter] Rate limit reached (5/5). Waiting 13s...
+💡 Insights synthesized
+✓ Phase 4: Verifying findings...
+✓ Verification complete - Confidence: 0.55
+💾 Checkpoint saved: Task completed successfully
+✅ Task dbac225f-f575-42c2-b906-225a100710e2 completed in 2m 53s
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Browser disconnected, will restart on next request

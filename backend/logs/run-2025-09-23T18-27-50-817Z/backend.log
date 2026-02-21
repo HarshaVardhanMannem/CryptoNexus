@@ -1,0 +1,141 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-09-23T18-27-50-817Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/pluto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1758652078959-439mwh92b subscribing to NIFTY50
+[ConnectRpcService] Starting scraping for NIFTY50
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for NIFTY50
+[scraper] Opening https://www.tradingview.com/symbols/NIFTY50/?exchange=BINANCE for NIFTY50
+[scraper] Successfully loaded TradingView page for NIFTY50
+[scraper] Validation failed for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Client client-1758652140220-le1btwy4x subscribing to NIFTY50
+[ConnectRpcService] Starting scraping for NIFTY50
+[browserManager] Created new context for NIFTY50
+[scraper] Opening https://www.tradingview.com/symbols/NIFTY50/?exchange=BINANCE for NIFTY50
+[scraper] Successfully loaded TradingView page for NIFTY50
+[scraper] Validation failed for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Client client-1758652173713-stwi9akp4 subscribing to NIFTY50
+[ConnectRpcService] Starting scraping for NIFTY50
+[browserManager] Created new context for NIFTY50
+[scraper] Opening https://www.tradingview.com/symbols/NIFTY50/?exchange=BINANCE for NIFTY50
+[scraper] Successfully loaded TradingView page for NIFTY50
+[scraper] Validation failed for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Client client-1758652199516-0hk5qh46c subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[ConnectRpcService] Client client-1758652203095-unw8ku5hr subscribing to ADAUSD
+[ConnectRpcService] Starting scraping for ADAUSD
+[browserManager] Created new context for ADAUSD
+[scraper] Opening https://www.tradingview.com/symbols/ADAUSD/?exchange=BINANCE for ADAUSD
+[scraper] Successfully loaded TradingView page for ADAUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1758652199516-0hk5qh46c)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 112094.32 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $112094.32 at 2025-09-23T18:30:06.254Z
+[ConnectRpcService] Price update for BTCUSD: $112094.32 at 2025-09-23T18:30:06.892Z
+[ConnectRpcService] Price update for BTCUSD: $112073.9 at 2025-09-23T18:30:09.075Z
+[scraper] Started scraping ADAUSD
+[ConnectRpcService] Creating price stream for ADAUSD (client: client-1758652203095-unw8ku5hr)
+[ConnectRpcService] Stream established for ADAUSD, waiting for first price update
+[scraper] Got immediate price 0.815 for ADAUSD
+[ConnectRpcService] Price update for ADAUSD: $0.815 at 2025-09-23T18:30:09.855Z
+[ConnectRpcService] Price update for ADAUSD: $0.815 at 2025-09-23T18:30:10.434Z
+[ConnectRpcService] Client client-1758652213792-sh9jf9kpq subscribing to SOLUSD
+[ConnectRpcService] Starting scraping for SOLUSD
+[browserManager] Created new context for SOLUSD
+[scraper] Opening https://www.tradingview.com/symbols/SOLUSD/?exchange=BINANCE for SOLUSD
+[scraper] Successfully loaded TradingView page for SOLUSD
+[ConnectRpcService] Price update for BTCUSD: $112052.37 at 2025-09-23T18:30:16.791Z
+[scraper] Started scraping SOLUSD
+[ConnectRpcService] Creating price stream for SOLUSD (client: client-1758652213792-sh9jf9kpq)
+[ConnectRpcService] Stream established for SOLUSD, waiting for first price update
+[scraper] Got immediate price 216.61 for SOLUSD
+[ConnectRpcService] Price update for SOLUSD: $216.61 at 2025-09-23T18:30:20.694Z
+[ConnectRpcService] Price update for SOLUSD: $216.61 at 2025-09-23T18:30:21.361Z
+[ConnectRpcService] Price update for SOLUSD: $216.73 at 2025-09-23T18:30:22.550Z
+[ConnectRpcService] Price update for BTCUSD: $111998.9 at 2025-09-23T18:30:22.570Z
+[ConnectRpcService] Price update for SOLUSD: $216.74 at 2025-09-23T18:30:24.827Z
+[ConnectRpcService] Client client-1758652203095-unw8ku5hr disconnected from ADAUSD
+[ConnectRpcService] Client client-1758652203095-unw8ku5hr disconnected, stopping stream for ADAUSD
+[ConnectRpcService] Handling client disconnect for client-1758652203095-unw8ku5hr
+[ConnectRpcService] Removed client client-1758652203095-unw8ku5hr from ADAUSD subscription
+[ConnectRpcService] No more clients for ADAUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for ADAUSD
+[scraper] Stopping scraper for ADAUSD
+[ConnectRpcService] Price update for BTCUSD: $112010.79 at 2025-09-23T18:30:24.917Z
+[scraper] Page closed for ADAUSD
+[browserManager] Context for ADAUSD closed and cleaned up
+[browserManager] Closed context for ADAUSD
+[scraper] Context closed for ADAUSD
+[ConnectRpcService] Scraper stopped and browser closed for ADAUSD
+[ConnectRpcService] Cleaned up client client-1758652203095-unw8ku5hr for symbol ADAUSD
+[ConnectRpcService] Client client-1758652199516-0hk5qh46c disconnected from BTCUSD
+[ConnectRpcService] Client client-1758652199516-0hk5qh46c disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1758652199516-0hk5qh46c
+[ConnectRpcService] Removed client client-1758652199516-0hk5qh46c from BTCUSD subscription
+[ConnectRpcService] No more clients for BTCUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[ConnectRpcService] Scraper stopped and browser closed for BTCUSD
+[ConnectRpcService] Cleaned up client client-1758652199516-0hk5qh46c for symbol BTCUSD
+[scraper] Scraping loop ended for ADAUSD
+[scraper] Scraping loop ended for BTCUSD
+[ConnectRpcService] Client client-1758652213792-sh9jf9kpq disconnected from SOLUSD
+[ConnectRpcService] Client client-1758652213792-sh9jf9kpq disconnected, stopping stream for SOLUSD
+[ConnectRpcService] Handling client disconnect for client-1758652213792-sh9jf9kpq
+[ConnectRpcService] Removed client client-1758652213792-sh9jf9kpq from SOLUSD subscription
+[ConnectRpcService] No more clients for SOLUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for SOLUSD
+[scraper] Stopping scraper for SOLUSD
+[scraper] Page closed for SOLUSD
+[browserManager] Context for SOLUSD closed and cleaned up
+[browserManager] Closed context for SOLUSD
+[scraper] Context closed for SOLUSD
+[ConnectRpcService] Scraper stopped and browser closed for SOLUSD
+[ConnectRpcService] Cleaned up client client-1758652213792-sh9jf9kpq for symbol SOLUSD
+[scraper] Scraping loop ended for SOLUSD
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Context for NIFTY50 closed and cleaned up

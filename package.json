@@ -1,0 +1,19 @@
+{
+    "name": "crypto-stream-app",
+    "private": true,
+    "version": "0.0.1",
+    "scripts": {
+      "bootstrap": "pnpm install --recursive",
+      "start": "./run.sh",
+      "backend": "pnpm --filter backend dev",
+      "frontend": "pnpm --filter frontend dev"
+    },
+    "workspaces": [
+      "backend",
+      "frontend"
+    ],
+    "devDependencies": {
+      "@bufbuild/protoc-gen-es": "^1.10.1",
+      "@bufbuild/protoc-gen-connect-es": "^0.13.0"
+    }
+  }

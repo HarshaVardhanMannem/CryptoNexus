@@ -1,0 +1,216 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-10-15T21-11-31-872Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/pluto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1760562721421-kqygwkhew subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760562721421-kqygwkhew)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 110604.12 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $110604.12 at 2025-10-15T21:12:12.985Z
+[ConnectRpcService] Price update for BTCUSD: $110596.25 at 2025-10-15T21:12:13.670Z
+[ConnectRpcService] Price update for BTCUSD: $110624.61 at 2025-10-15T21:12:19.482Z
+[ConnectRpcService] Price update for BTCUSD: $110611.58 at 2025-10-15T21:12:27.363Z
+[ConnectRpcService] Client client-1760562752825-9mc8ypetk subscribing to ETHUSD
+[ConnectRpcService] Starting scraping for ETHUSD
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $110585.53 at 2025-10-15T21:12:34.482Z
+[scraper] Successfully loaded TradingView page for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $110593.96 at 2025-10-15T21:12:36.892Z
+[scraper] Started scraping ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760562752825-9mc8ypetk)
+[ConnectRpcService] Stream established for ETHUSD, waiting for first price update
+[scraper] Got immediate price 3943.35 for ETHUSD
+[ConnectRpcService] Price update for ETHUSD: $3943.35 at 2025-10-15T21:12:41.071Z
+[ConnectRpcService] Price update for ETHUSD: $3943.35 at 2025-10-15T21:12:41.727Z
+[ConnectRpcService] Price update for ETHUSD: $3947.81 at 2025-10-15T21:12:47.021Z
+[ConnectRpcService] Price update for BTCUSD: $110661.72 at 2025-10-15T21:12:47.029Z
+[ConnectRpcService] Price update for ETHUSD: $3947.75 at 2025-10-15T21:12:50.867Z
+[ConnectRpcService] Price update for BTCUSD: $110733.72 at 2025-10-15T21:12:52.009Z
+[ConnectRpcService] Price update for ETHUSD: $3950.06 at 2025-10-15T21:13:00.853Z
+[ConnectRpcService] Price update for BTCUSD: $110733.51 at 2025-10-15T21:13:00.859Z
+[ConnectRpcService] Price update for BTCUSD: $110739.46 at 2025-10-15T21:13:04.891Z
+[ConnectRpcService] Price update for ETHUSD: $3950.12 at 2025-10-15T21:13:04.899Z
+[ConnectRpcService] Price update for BTCUSD: $110764.05 at 2025-10-15T21:13:10.492Z
+[ConnectRpcService] Price update for ETHUSD: $3948.9 at 2025-10-15T21:13:11.722Z
+[ConnectRpcService] Price update for ETHUSD: $3950.01 at 2025-10-15T21:13:14.076Z
+[ConnectRpcService] Client client-1760562721421-kqygwkhew disconnected from BTCUSD
+[ConnectRpcService] Client client-1760562721421-kqygwkhew disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760562721421-kqygwkhew
+[ConnectRpcService] Removed client client-1760562721421-kqygwkhew from BTCUSD subscription
+[ConnectRpcService] No more clients for BTCUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[ConnectRpcService] Client client-1760562752825-9mc8ypetk disconnected from ETHUSD
+[ConnectRpcService] Client client-1760562752825-9mc8ypetk disconnected, stopping stream for ETHUSD
+[ConnectRpcService] Handling client disconnect for client-1760562752825-9mc8ypetk
+[ConnectRpcService] Removed client client-1760562752825-9mc8ypetk from ETHUSD subscription
+[ConnectRpcService] No more clients for ETHUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for BTCUSD
+[scraper] Page closed for ETHUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[ConnectRpcService] Scraper stopped and browser closed for BTCUSD
+[ConnectRpcService] Cleaned up client client-1760562721421-kqygwkhew for symbol BTCUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[ConnectRpcService] Scraper stopped and browser closed for ETHUSD
+[ConnectRpcService] Cleaned up client client-1760562752825-9mc8ypetk for symbol ETHUSD
+[scraper] Scraping loop ended for BTCUSD
+[scraper] Scraping loop ended for ETHUSD
+[ConnectRpcService] Client client-1760562795602-zih4pxl1i subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760562795602-zih4pxl1i)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 110761.65 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $110761.65 at 2025-10-15T21:13:23.413Z
+[ConnectRpcService] Price update for BTCUSD: $110804.85 at 2025-10-15T21:13:24.110Z
+[ConnectRpcService] Price update for BTCUSD: $110818.4 at 2025-10-15T21:13:32.846Z
+[ConnectRpcService] Price update for BTCUSD: $110804.45 at 2025-10-15T21:13:39.907Z
+[ConnectRpcService] Client client-1760562821789-nsyrwqtbj subscribing to BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760562821789-nsyrwqtbj)
+[ConnectRpcService] Sending cached price for BTCUSD to client client-1760562821789-nsyrwqtbj: $110804.45
+[ConnectRpcService] Price update for BTCUSD: $110798.83 at 2025-10-15T21:13:46.975Z
+[ConnectRpcService] Client client-1760562833814-fd799vye4 subscribing to ETHUSD
+[ConnectRpcService] Starting scraping for ETHUSD
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Started scraping ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760562833814-fd799vye4)
+[ConnectRpcService] Stream established for ETHUSD, waiting for first price update
+[scraper] Got immediate price 3954.14 for ETHUSD
+[ConnectRpcService] Price update for ETHUSD: $3954.14 at 2025-10-15T21:14:01.841Z
+[ConnectRpcService] Price update for ETHUSD: $3954.14 at 2025-10-15T21:14:02.458Z
+[ConnectRpcService] Client client-1760562845607-do46gw0qs subscribing to ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760562845607-do46gw0qs)
+[ConnectRpcService] Sending cached price for ETHUSD to client client-1760562845607-do46gw0qs: $3954.14
+[ConnectRpcService] Price update for BTCUSD: $110783.11 at 2025-10-15T21:14:05.701Z
+[ConnectRpcService] Price update for ETHUSD: $3953.31 at 2025-10-15T21:14:09.543Z
+[ConnectRpcService] Client client-1760562852677-s0zntue3v subscribing to ADAUSD
+[ConnectRpcService] Starting scraping for ADAUSD
+[browserManager] Created new context for ADAUSD
+[scraper] Opening https://www.tradingview.com/symbols/ADAUSD/?exchange=BINANCE for ADAUSD
+[ConnectRpcService] Price update for BTCUSD: $110823.39 at 2025-10-15T21:14:14.306Z
+[scraper] Successfully loaded TradingView page for ADAUSD
+[ConnectRpcService] Price update for BTCUSD: $110806.35 at 2025-10-15T21:14:16.776Z
+[ConnectRpcService] Price update for ETHUSD: $3954.42 at 2025-10-15T21:14:19.055Z
+[scraper] Started scraping ADAUSD
+[ConnectRpcService] Creating price stream for ADAUSD (client: client-1760562852677-s0zntue3v)
+[ConnectRpcService] Stream established for ADAUSD, waiting for first price update
+[scraper] Got immediate price 0.663 for ADAUSD
+[ConnectRpcService] Price update for ADAUSD: $0.663 at 2025-10-15T21:14:20.990Z
+[ConnectRpcService] Price update for ADAUSD: $0.663 at 2025-10-15T21:14:21.703Z
+[ConnectRpcService] Price update for BTCUSD: $110795.61 at 2025-10-15T21:14:25.556Z
+[ConnectRpcService] Client client-1760562874278-ahx5swu9l subscribing to ADAUSD
+[ConnectRpcService] Creating price stream for ADAUSD (client: client-1760562874278-ahx5swu9l)
+[ConnectRpcService] Sending cached price for ADAUSD to client client-1760562874278-ahx5swu9l: $0.663
+[ConnectRpcService] Price update for BTCUSD: $110786.15 at 2025-10-15T21:14:34.419Z
+[ConnectRpcService] Price update for ETHUSD: $3954.9 at 2025-10-15T21:14:40.276Z
+[ConnectRpcService] Price update for BTCUSD: $110792.48 at 2025-10-15T21:14:40.310Z
+[ConnectRpcService] Price update for BTCUSD: $110796.99 at 2025-10-15T21:14:45.371Z
+[ConnectRpcService] Price update for BTCUSD: $110813.14 at 2025-10-15T21:14:49.460Z
+[ConnectRpcService] Price update for ETHUSD: $3954.53 at 2025-10-15T21:14:54.095Z
+[ConnectRpcService] Price update for BTCUSD: $110821.71 at 2025-10-15T21:14:56.784Z
+[ConnectRpcService] Price update for BTCUSD: $110827.9 at 2025-10-15T21:14:57.932Z
+[ConnectRpcService] Price update for ETHUSD: $3955.98 at 2025-10-15T21:14:58.787Z
+[ConnectRpcService] Price update for ETHUSD: $3957.19 at 2025-10-15T21:15:03.485Z
+[ConnectRpcService] Price update for BTCUSD: $110836.94 at 2025-10-15T21:15:05.246Z
+[ConnectRpcService] Price update for BTCUSD: $110841.45 at 2025-10-15T21:15:06.446Z
+[ConnectRpcService] Price update for ETHUSD: $3960.65 at 2025-10-15T21:15:09.523Z
+[ConnectRpcService] Price update for BTCUSD: $110882.56 at 2025-10-15T21:15:12.317Z
+[ConnectRpcService] Price update for ETHUSD: $3961.67 at 2025-10-15T21:15:15.791Z
+[ConnectRpcService] Price update for ETHUSD: $3961.92 at 2025-10-15T21:15:16.971Z
+[ConnectRpcService] Price update for ETHUSD: $3961.65 at 2025-10-15T21:15:23.323Z
+[ConnectRpcService] Price update for BTCUSD: $110849.43 at 2025-10-15T21:15:23.332Z
+[ConnectRpcService] Price update for ETHUSD: $3960.7 at 2025-10-15T21:15:31.768Z
+[ConnectRpcService] Price update for BTCUSD: $110863.15 at 2025-10-15T21:15:31.855Z
+[ConnectRpcService] Price update for BTCUSD: $110848.35 at 2025-10-15T21:15:39.268Z
+[ConnectRpcService] Client client-1760562821789-nsyrwqtbj disconnected from BTCUSD
+[ConnectRpcService] Client client-1760562821789-nsyrwqtbj disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760562821789-nsyrwqtbj
+[ConnectRpcService] Removed client client-1760562821789-nsyrwqtbj from BTCUSD subscription
+[ConnectRpcService] Cleaned up client client-1760562821789-nsyrwqtbj for symbol BTCUSD
+[ConnectRpcService] Client client-1760562874278-ahx5swu9l disconnected from ADAUSD
+[ConnectRpcService] Client client-1760562874278-ahx5swu9l disconnected, stopping stream for ADAUSD
+[ConnectRpcService] Handling client disconnect for client-1760562874278-ahx5swu9l
+[ConnectRpcService] Removed client client-1760562874278-ahx5swu9l from ADAUSD subscription
+[ConnectRpcService] Cleaned up client client-1760562874278-ahx5swu9l for symbol ADAUSD
+[ConnectRpcService] Client client-1760562845607-do46gw0qs disconnected from ETHUSD
+[ConnectRpcService] Client client-1760562845607-do46gw0qs disconnected, stopping stream for ETHUSD
+[ConnectRpcService] Handling client disconnect for client-1760562845607-do46gw0qs
+[ConnectRpcService] Removed client client-1760562845607-do46gw0qs from ETHUSD subscription
+[ConnectRpcService] Cleaned up client client-1760562845607-do46gw0qs for symbol ETHUSD
+[ConnectRpcService] Client client-1760562795602-zih4pxl1i disconnected from BTCUSD
+[ConnectRpcService] Client client-1760562795602-zih4pxl1i disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760562795602-zih4pxl1i
+[ConnectRpcService] Removed client client-1760562795602-zih4pxl1i from BTCUSD subscription
+[ConnectRpcService] No more clients for BTCUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[ConnectRpcService] Client client-1760562852677-s0zntue3v disconnected from ADAUSD
+[ConnectRpcService] Client client-1760562852677-s0zntue3v disconnected, stopping stream for ADAUSD
+[ConnectRpcService] Handling client disconnect for client-1760562852677-s0zntue3v
+[ConnectRpcService] Removed client client-1760562852677-s0zntue3v from ADAUSD subscription
+[ConnectRpcService] No more clients for ADAUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for ADAUSD
+[scraper] Stopping scraper for ADAUSD
+[ConnectRpcService] Client client-1760562833814-fd799vye4 disconnected from ETHUSD
+[ConnectRpcService] Client client-1760562833814-fd799vye4 disconnected, stopping stream for ETHUSD
+[ConnectRpcService] Handling client disconnect for client-1760562833814-fd799vye4
+[ConnectRpcService] Removed client client-1760562833814-fd799vye4 from ETHUSD subscription
+[ConnectRpcService] No more clients for ETHUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[scraper] Page closed for ADAUSD
+[scraper] Page closed for BTCUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[ConnectRpcService] Scraper stopped and browser closed for ETHUSD
+[ConnectRpcService] Cleaned up client client-1760562833814-fd799vye4 for symbol ETHUSD
+[browserManager] Context for ADAUSD closed and cleaned up
+[browserManager] Closed context for ADAUSD
+[scraper] Context closed for ADAUSD
+[ConnectRpcService] Scraper stopped and browser closed for ADAUSD
+[ConnectRpcService] Cleaned up client client-1760562852677-s0zntue3v for symbol ADAUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[ConnectRpcService] Scraper stopped and browser closed for BTCUSD
+[ConnectRpcService] Cleaned up client client-1760562795602-zih4pxl1i for symbol BTCUSD
+[scraper] Scraping loop ended for ETHUSD
+[scraper] Scraping loop ended for ADAUSD
+[scraper] Scraping loop ended for BTCUSD
+[ConnectRpcService] Client client-1760562959058-fdg8kjme8 subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760562959058-fdg8kjme8)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 110837.43 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $110837.43 at 2025-10-15T21:16:06.711Z
+[ConnectRpcService] Price update for BTCUSD: $110837.43 at 2025-10-15T21:16:07.417Z
+[scraper] Page closed for BTCUSD, stopping scraper
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Browser disconnected, will restart on next request

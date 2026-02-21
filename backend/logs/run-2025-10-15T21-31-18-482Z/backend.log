@@ -1,0 +1,86 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-10-15T21-31-18-482Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1760563891143-pu28cbht8 subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760563891143-pu28cbht8)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 110870.32 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $110870.32 at 2025-10-15T21:31:40.748Z
+[ConnectRpcService] Price update for BTCUSD: $110870.32 at 2025-10-15T21:31:41.560Z
+[ConnectRpcService] Price update for BTCUSD: $110873.8 at 2025-10-15T21:31:42.687Z
+[ConnectRpcService] Price update for BTCUSD: $110882.25 at 2025-10-15T21:31:48.459Z
+[ConnectRpcService] Price update for BTCUSD: $1 at 2025-10-15T21:31:51.775Z
+[ConnectRpcService] Price update for BTCUSD: $110882.25 at 2025-10-15T21:31:52.875Z
+[ConnectRpcService] Price update for BTCUSD: $110899.71 at 2025-10-15T21:31:53.946Z
+[ConnectRpcService] Price update for BTCUSD: $1 at 2025-10-15T21:32:04.102Z
+[ConnectRpcService] Price update for BTCUSD: $110896.93 at 2025-10-15T21:32:05.252Z
+[ConnectRpcService] Price update for BTCUSD: $110922.43 at 2025-10-15T21:32:09.662Z
+[ConnectRpcService] Price update for BTCUSD: $110939.24 at 2025-10-15T21:32:17.652Z
+[ConnectRpcService] Price update for BTCUSD: $110935.42 at 2025-10-15T21:32:22.057Z
+[ConnectRpcService] Price update for BTCUSD: $110940.37 at 2025-10-15T21:32:24.310Z
+[ConnectRpcService] Price update for BTCUSD: $110949.37 at 2025-10-15T21:32:33.367Z
+[ConnectRpcService] Price update for BTCUSD: $110967.72 at 2025-10-15T21:32:39.124Z
+[ConnectRpcService] Price update for BTCUSD: $110981.06 at 2025-10-15T21:32:49.294Z
+[ConnectRpcService] Price update for BTCUSD: $110985.8 at 2025-10-15T21:33:05.724Z
+[ConnectRpcService] Price update for BTCUSD: $111026.45 at 2025-10-15T21:33:09.280Z
+[ConnectRpcService] Price update for BTCUSD: $111207.75 at 2025-10-15T21:33:14.810Z
+[ConnectRpcService] Price update for BTCUSD: $111244.74 at 2025-10-15T21:33:22.612Z
+[ConnectRpcService] Price update for BTCUSD: $111244 at 2025-10-15T21:33:29.505Z
+[ConnectRpcService] Price update for BTCUSD: $111249.28 at 2025-10-15T21:33:35.411Z
+[ConnectRpcService] Price update for BTCUSD: $111249.26 at 2025-10-15T21:33:45.428Z
+[ConnectRpcService] Price update for BTCUSD: $111202.8 at 2025-10-15T21:33:52.099Z
+[ConnectRpcService] Price update for BTCUSD: $111202.79 at 2025-10-15T21:33:58.525Z
+[ConnectRpcService] Price update for BTCUSD: $111203.75 at 2025-10-15T21:34:01.869Z
+[ConnectRpcService] Price update for BTCUSD: $111197.98 at 2025-10-15T21:34:08.048Z
+[ConnectRpcService] Price update for BTCUSD: $111192.64 at 2025-10-15T21:34:13.562Z
+[ConnectRpcService] Price update for BTCUSD: $111145.88 at 2025-10-15T21:34:20.196Z
+[ConnectRpcService] Price update for BTCUSD: $111149.41 at 2025-10-15T21:34:25.716Z
+[ConnectRpcService] Price update for BTCUSD: $111177.37 at 2025-10-15T21:34:31.727Z
+[ConnectRpcService] Price update for BTCUSD: $111171.81 at 2025-10-15T21:34:37.178Z
+[ConnectRpcService] Price update for BTCUSD: $111166.27 at 2025-10-15T21:34:42.545Z
+[ConnectRpcService] Price update for BTCUSD: $111194.06 at 2025-10-15T21:34:43.755Z
+[ConnectRpcService] Price update for BTCUSD: $111203.32 at 2025-10-15T21:34:49.147Z
+[ConnectRpcService] Price update for BTCUSD: $111269.46 at 2025-10-15T21:34:56.641Z
+[ConnectRpcService] Price update for BTCUSD: $111254.52 at 2025-10-15T21:35:02.043Z
+[ConnectRpcService] Price update for BTCUSD: $111287.13 at 2025-10-15T21:35:09.588Z
+[ConnectRpcService] Price update for BTCUSD: $111289.87 at 2025-10-15T21:35:10.646Z
+[ConnectRpcService] Price update for BTCUSD: $111367.83 at 2025-10-15T21:35:16.004Z
+[ConnectRpcService] Price update for BTCUSD: $111357.17 at 2025-10-15T21:35:23.755Z
+[ConnectRpcService] Price update for BTCUSD: $111354.45 at 2025-10-15T21:35:31.804Z
+[ConnectRpcService] Price update for BTCUSD: $111387.6 at 2025-10-15T21:35:34.059Z
+[ConnectRpcService] Price update for BTCUSD: $111382.32 at 2025-10-15T21:35:39.904Z
+[ConnectRpcService] Price update for BTCUSD: $111397.24 at 2025-10-15T21:35:47.671Z
+[ConnectRpcService] Price update for BTCUSD: $111397.23 at 2025-10-15T21:35:49.967Z
+[ConnectRpcService] Price update for BTCUSD: $111375.9 at 2025-10-15T21:36:03.311Z
+[ConnectRpcService] Price update for BTCUSD: $111389.86 at 2025-10-15T21:36:10.257Z
+[ConnectRpcService] Price update for BTCUSD: $111395.45 at 2025-10-15T21:36:18.904Z
+[ConnectRpcService] Price update for BTCUSD: $111364.48 at 2025-10-15T21:36:25.619Z
+[ConnectRpcService] Price update for BTCUSD: $111348.3 at 2025-10-15T21:36:31.170Z
+[ConnectRpcService] Price update for BTCUSD: $111352.06 at 2025-10-15T21:36:33.368Z
+[ConnectRpcService] Price update for BTCUSD: $111346.5 at 2025-10-15T21:36:43.290Z
+[ConnectRpcService] Price update for BTCUSD: $111339.8 at 2025-10-15T21:36:48.677Z
+[ConnectRpcService] Client client-1760563891143-pu28cbht8 disconnected from BTCUSD
+[ConnectRpcService] Client client-1760563891143-pu28cbht8 disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760563891143-pu28cbht8
+[ConnectRpcService] Removed client client-1760563891143-pu28cbht8 from BTCUSD subscription
+[ConnectRpcService] No more clients for BTCUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[ConnectRpcService] Scraper stopped and browser closed for BTCUSD
+[ConnectRpcService] Cleaned up client client-1760563891143-pu28cbht8 for symbol BTCUSD
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Browser disconnected, will restart on next request

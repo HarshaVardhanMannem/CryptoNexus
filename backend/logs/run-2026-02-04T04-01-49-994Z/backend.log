@@ -1,0 +1,220 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-04T04-01-49-994Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+📊 Starting analysis task: Analyze Bitcoin for the next 1 minutes and identify trading opportunities
+✅ Market Monitor Agent initialized
+✅ News Sentiment Agent initialized
+✅ On-Chain Analysis Agent initialized
+✅ Strategy Generator Agent initialized
+✅ Coordinator Agent initialized with Gemini 3 Flash Preview
+🚀 Starting Marathon Task: 50806323-99b4-4e8a-8f76-c6079cd43823
+📋 Goal: Analyze Bitcoin for the next 1 minutes and identify trading opportunities
+🧠 Phase 1: Planning with Gemini 3 Pro...
+📝 Generated 6 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Real-Time L2 Order Book & Price Action Analysis (market_monitor)
+    [market_monitor] Processing: Monitor BTC/USDT pair on the 1-minute timeframe across major exchanges (Binance, Coinbase, Bybit). Analyze bid/ask spread, order book depth (liquidity clusters), and immediate price volatility using 1m candles.
+[MarketMonitorAgent] Processing: Monitor BTC/USDT pair on the 1-minute timeframe across major exchanges (Binance, Coinbase, Bybit). Analyze bid/ask spread, order book depth (liquidity clusters), and immediate price volatility using 1m candles.
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 76575.8 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Gemini analysis failed: {"error":{"code":503,"message":"The model is overloaded. Please try again later.","status":"UNAVAILABLE"}}
+[MarketMonitorAgent] Analysis complete for BTCUSD: $76575.8
+  → Executing: Micro-Timeframe Technical Indicator Calculation (market_monitor)
+    [market_monitor] Processing: Calculate and monitor the Relative Strength Index (RSI), VWAP (Volume Weighted Average Price), and Bollinger Band deviations on the 1-minute chart to identify immediate overbought/oversold conditions for a scalp entry.
+[MarketMonitorAgent] Processing: Calculate and monitor the Relative Strength Index (RSI), VWAP (Volume Weighted Average Price), and Bollinger Band deviations on the 1-minute chart to identify immediate overbought/oversold conditions for a scalp entry.
+[browserManager] Created new context for SOLUSD
+[scraper] Opening https://www.tradingview.com/symbols/SOLUSD/?exchange=BINANCE for SOLUSD
+[scraper] Successfully loaded TradingView page for SOLUSD
+[scraper] Validation failed for SOLUSD: Error: Price selectors not found (title: SOLUSD — Solana to USD Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at [90mC:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\agents\MarketMonitorAgent.ts:88:33
+[scraper] Failed to load TradingView page for SOLUSD: Error: Price selectors not found (title: SOLUSD — Solana to USD Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at [90mC:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\agents\MarketMonitorAgent.ts:88:33
+  ❌ Subtask failed: Price selectors not found (title: SOLUSD — Solana to USD Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+  → Executing: High-Frequency Sentiment & Breaking News Scraping (news_sentiment)
+    [news_sentiment] Processing: Scrape X (Twitter) API, Telegram 'Whale' channels, and news aggregators like Tree News for immediate mentions of Bitcoin that could trigger algorithmic price spikes or liquidations in the next 60 seconds.
+[NewsSentimentAgent] Processing: Scrape X (Twitter) API, Telegram 'Whale' channels, and news aggregators like Tree News for immediate mentions of Bitcoin that could trigger algorithmic price spikes or liquidations in the next 60 seconds.
+[NewsSentimentAgent] Analysis complete for BTC: neutral (65% confidence)
+  → Executing: Exchange Net-Flow & Large Transaction Tracking (onchain_analysis)
+    [onchain_analysis] Processing: Examine real-time blockchain data for BTC movements exceeding 50 BTC. Specifically monitor 'Exchange Inflow' spikes to identify potential immediate sell-side pressure or 'Exchange Outflows' indicating accumulation.
+[OnChainAnalysisAgent] Processing: Examine real-time blockchain data for BTC movements exceeding 50 BTC. Specifically monitor 'Exchange Inflow' spikes to identify potential immediate sell-side pressure or 'Exchange Outflows' indicating accumulation.
+[OnChainAnalysisAgent] Analysis complete for BTC: 3 whale transactions
+💾 Checkpoint saved: Completed Exchange Net-Flow & Large Transaction Tracking
+  → Executing: Liquidation Heatmap and Open Interest (OI) Analysis (onchain_analysis)
+    [onchain_analysis] Processing: Analyze the BTC futures liquidation heatmap and changes in Open Interest to determine if the next 1-minute move is likely to be a short-squeeze or a long-flush.
+[OnChainAnalysisAgent] Processing: Analyze the BTC futures liquidation heatmap and changes in Open Interest to determine if the next 1-minute move is likely to be a short-squeeze or a long-flush.
+[OnChainAnalysisAgent] Gemini analysis failed: {"error":{"code":503,"message":"The model is overloaded. Please try again later.","status":"UNAVAILABLE"}}
+[OnChainAnalysisAgent] Analysis complete for BTC: 3 whale transactions
+  → Executing: Short-Term Scalp Strategy Synthesis (strategy_generator)
+    [strategy_generator] Processing: Synthesize order book imbalance data, sentiment velocity, and whale movement signals to generate a precise Buy/Sell/Hold recommendation with an expected duration of 1 minute, including stop-loss and take-profit levels.
+[StrategyGeneratorAgent] Processing: Synthesize order book imbalance data, sentiment velocity, and whale movement signals to generate a precise Buy/Sell/Hold recommendation with an expected duration of 1 minute, including stop-loss and take-profit levels.
+[StrategyGeneratorAgent] Strategy generated for BTC: SELL (72% confidence)
+💡 Phase 3: Synthesizing insights...
+💡 Insights synthesized
+✓ Phase 4: Verifying findings...
+✓ Verification complete - Confidence: 0.35
+💾 Checkpoint saved: Task completed successfully
+✅ Task 50806323-99b4-4e8a-8f76-c6079cd43823 completed in 1m 43s
+📊 Starting analysis task: Analyze Ethereum trading opportunities with focus on DeFi trends
+🚀 Starting Marathon Task: 2f4d5879-213b-4fab-9dd6-c435ee0ec254
+📋 Goal: Analyze Ethereum trading opportunities with focus on DeFi trends
+🧠 Phase 1: Planning with Gemini 3 Pro...
+📝 Generated 8 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Technical Analysis of ETH and DeFi Blue Chips (market_monitor)
+    [market_monitor] Processing: Analyze price action, volume, and technical indicators (RSI, MACD, 50/200 EMA) for ETH/USDT, LDO/USDT, AAVE/USDT, and UNI/USDT on 4H and Daily timeframes to identify trend direction and key support/resistance levels.
+[MarketMonitorAgent] Processing: Analyze price action, volume, and technical indicators (RSI, MACD, 50/200 EMA) for ETH/USDT, LDO/USDT, AAVE/USDT, and UNI/USDT on 4H and Daily timeframes to identify trend direction and key support/resistance levels.
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Started scraping ETHUSD
+[scraper] Got immediate price 2280.71 for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[scraper] Fatal error in scraping loop for ETHUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for ETHUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[MarketMonitorAgent] Analysis complete for ETHUSD: $2280.71
+  → Executing: ETH/BTC Ratio and Sector Relative Strength (market_monitor)
+    [market_monitor] Processing: Track the ETH/BTC pair to determine Ethereum's strength against Bitcoin. Compare ETH performance against the DeFi Pulse Index (DPI) to identify if the sector is leading or lagging the underlying asset.
+[MarketMonitorAgent] Processing: Track the ETH/BTC pair to determine Ethereum's strength against Bitcoin. Compare ETH performance against the DeFi Pulse Index (DPI) to identify if the sector is leading or lagging the underlying asset.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 76547.36 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $76547.36
+  → Executing: Social Sentiment and DeFi Ecosystem News (news_sentiment)
+    [news_sentiment] Processing: Scrape X (Twitter), Reddit (r/ethfinance, r/defi), and Discord for sentiment regarding the Pectra upgrade and specific DeFi protocol updates. Monitor news outlets like The Block and CoinDesk for regulatory news concerning Ethereum or decentralized exchanges.
+[NewsSentimentAgent] Processing: Scrape X (Twitter), Reddit (r/ethfinance, r/defi), and Discord for sentiment regarding the Pectra upgrade and specific DeFi protocol updates. Monitor news outlets like The Block and CoinDesk for regulatory news concerning Ethereum or decentralized exchanges.
+[NewsSentimentAgent] Analysis complete for ETH: neutral (72% confidence)
+💾 Checkpoint saved: Completed Social Sentiment and DeFi Ecosystem News
+  → Executing: Institutional and Whale Movement Tracking (onchain_analysis)
+    [onchain_analysis] Processing: Examine Etherscan and Whale Alert data for large ETH transfers to/from exchanges. Analyze Net Exchange Flow to determine if ETH is being moved to cold storage (bullish) or onto exchanges (bearish).
+[OnChainAnalysisAgent] Processing: Examine Etherscan and Whale Alert data for large ETH transfers to/from exchanges. Analyze Net Exchange Flow to determine if ETH is being moved to cold storage (bullish) or onto exchanges (bearish).
+[OnChainAnalysisAgent] Analysis complete for ETH: 2 whale transactions
+  → Executing: DeFi TVL and Protocol Revenue Analysis (onchain_analysis)
+    [onchain_analysis] Processing: Use DefiLlama to track Total Value Locked (TVL) trends across top Ethereum protocols. Identify growth in Liquid Staking (LST) and Restaking (EigenLayer) sectors to gauge Ethereum-native capital efficiency and demand.
+[OnChainAnalysisAgent] Processing: Use DefiLlama to track Total Value Locked (TVL) trends across top Ethereum protocols. Identify growth in Liquid Staking (LST) and Restaking (EigenLayer) sectors to gauge Ethereum-native capital efficiency and demand.
+[OnChainAnalysisAgent] Analysis complete for ETH: 6 whale transactions
+  → Executing: Gas Price and Network Usage Metrics (onchain_analysis)
+    [onchain_analysis] Processing: Monitor daily active addresses and median gas prices on Ethereum Mainnet and major L2s (Arbitrum, Optimism, Base) to determine if DeFi activity is increasing or if the network is underutilized.
+[OnChainAnalysisAgent] Processing: Monitor daily active addresses and median gas prices on Ethereum Mainnet and major L2s (Arbitrum, Optimism, Base) to determine if DeFi activity is increasing or if the network is underutilized.
+[OnChainAnalysisAgent] Failed to fetch network metrics: Request failed with status code 429
+[OnChainAnalysisAgent] Analysis complete for ETH: 4 whale transactions
+💾 Checkpoint saved: Completed Gas Price and Network Usage Metrics
+  → Executing: Synthesized Trade Strategy Development (strategy_generator)
+    [strategy_generator] Processing: Synthesize technical breakouts with on-chain whale accumulation and positive social sentiment. Define specific entry prices, stop-loss levels, and take-profit targets for ETH and the top 2 trending DeFi tokens.
+[StrategyGeneratorAgent] Processing: Synthesize technical breakouts with on-chain whale accumulation and positive social sentiment. Define specific entry prices, stop-loss levels, and take-profit targets for ETH and the top 2 trending DeFi tokens.
+[StrategyGeneratorAgent] Strategy generated for ETH: HOLD (65% confidence)
+  → Executing: Risk Assessment and Correlation Review (strategy_generator)
+    [strategy_generator] Processing: Calculate the correlation of the proposed trade ideas with BTC and the S&P 500. Adjust position sizes based on current market volatility (VIX/DVOL) to ensure the strategy adheres to a 3:1 Reward-to-Risk ratio.
+[StrategyGeneratorAgent] Processing: Calculate the correlation of the proposed trade ideas with BTC and the S&P 500. Adjust position sizes based on current market volatility (VIX/DVOL) to ensure the strategy adheres to a 3:1 Reward-to-Risk ratio.
+[StrategyGeneratorAgent] Strategy generated for ETH: SELL (68% confidence)
+💡 Phase 3: Synthesizing insights...
+❌ Task 2f4d5879-213b-4fab-9dd6-c435ee0ec254 failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3-flash\nPlease retry in 5.666811311s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"5s"}]}}
+📊 Starting analysis task: Find scalping opportunities for Bitcoin based on recent market trends
+🚀 Starting Marathon Task: 01ea336a-2d4f-4b89-970a-a5904cc515df
+📋 Goal: Find scalping opportunities for Bitcoin based on recent market trends
+🧠 Phase 1: Planning with Gemini 3 Pro...
+📝 Generated 8 subtasks
+💾 Checkpoint saved: Planning completed
+⚙️  Phase 2: Executing subtasks...
+  → Executing: Intraday Technical Indicator Extraction (market_monitor)
+    [market_monitor] Processing: Monitor BTC/USDT pairs on Binance and Bybit across 1m, 5m, and 15m timeframes. Calculate RSI (14), EMA (20, 50, 200), and Bollinger Bands to identify volatility squeeze or overbought/oversold conditions relevant for scalping.
+[MarketMonitorAgent] Processing: Monitor BTC/USDT pairs on Binance and Bybit across 1m, 5m, and 15m timeframes. Calculate RSI (14), EMA (20, 50, 200), and Bollinger Bands to identify volatility squeeze or overbought/oversold conditions relevant for scalping.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 76570.57 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $76570.57
+  → Executing: Order Book Depth and Heatmap Analysis (market_monitor)
+    [market_monitor] Processing: Analyze BTC/USDT order book depth and 'Heatmap' data to identify significant buy/sell walls. Track bid-ask spread and real-time order flow imbalance to predict immediate price pressure and micro-level support/resistance.
+[MarketMonitorAgent] Processing: Analyze BTC/USDT order book depth and 'Heatmap' data to identify significant buy/sell walls. Track bid-ask spread and real-time order flow imbalance to predict immediate price pressure and micro-level support/resistance.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[scraper] Got immediate price 76566.52 for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[scraper] Fatal error in scraping loop for BTCUSD: page.waitForTimeout: Target page, context or browser has been closed
+    at Object.start [90m(C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\[39msrc\playwright\scraper.ts:106:18[90m)[39m
+[scraper] Scraping loop ended for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[MarketMonitorAgent] Analysis complete for BTCUSD: $76566.52
+  → Executing: Macro News and Social Sentiment Scraping (news_sentiment)
+    [news_sentiment] Processing: Scrape X (Twitter) for key influencers and 'Whale Alert' posts. Aggregate headlines from CoinDesk, Cointelegraph, and The Block. Use NLP to determine a real-time sentiment score for 'Bitcoin' and 'BTC' to identify volatility catalysts.
+[NewsSentimentAgent] Processing: Scrape X (Twitter) for key influencers and 'Whale Alert' posts. Aggregate headlines from CoinDesk, Cointelegraph, and The Block. Use NLP to determine a real-time sentiment score for 'Bitcoin' and 'BTC' to identify volatility catalysts.
+[NewsSentimentAgent] Analysis complete for BTC: neutral (65% confidence)
+💾 Checkpoint saved: Completed Macro News and Social Sentiment Scraping
+  → Executing: Derivatives Sentiment & Funding Rate Check (news_sentiment)
+    [news_sentiment] Processing: Examine BTC perpetual funding rates and Open Interest (OI) shifts on major exchanges. High positive funding rates combined with rising price can signal a potential long-squeeze, a prime setup for a scalp short.
+[NewsSentimentAgent] Processing: Examine BTC perpetual funding rates and Open Interest (OI) shifts on major exchanges. High positive funding rates combined with rising price can signal a potential long-squeeze, a prime setup for a scalp short.
+[NewsSentimentAgent] Gemini analysis failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.840360745s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[NewsSentimentAgent] Analysis complete for BTC: neutral (60% confidence)
+  → Executing: Exchange Netflow and Stablecoin Supply Analysis (onchain_analysis)
+    [onchain_analysis] Processing: Examine real-time on-chain data for BTC exchange inflows/outflows. Track the Stablecoin Supply Ratio (SSR) and 'Exchange Whale Ratio' to determine if large holders are preparing to dump assets or if fresh liquidity is entering the market.
+[OnChainAnalysisAgent] Processing: Examine real-time on-chain data for BTC exchange inflows/outflows. Track the Stablecoin Supply Ratio (SSR) and 'Exchange Whale Ratio' to determine if large holders are preparing to dump assets or if fresh liquidity is entering the market.
+[OnChainAnalysisAgent] Gemini analysis failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.605034589s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[OnChainAnalysisAgent] Analysis complete for BTC: 6 whale transactions
+  → Executing: Large Wallet Movement Tracking (onchain_analysis)
+    [onchain_analysis] Processing: Track movements from 'Mega-Whale' wallets (>1,000 BTC) to exchanges. Identify 'Exchange to Exchange' vs 'Exchange to Wallet' transfers to confirm whether current market moves are driven by retail or institutional distribution.
+[OnChainAnalysisAgent] Processing: Track movements from 'Mega-Whale' wallets (>1,000 BTC) to exchanges. Identify 'Exchange to Exchange' vs 'Exchange to Wallet' transfers to confirm whether current market moves are driven by retail or institutional distribution.
+[OnChainAnalysisAgent] Gemini analysis failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.434867018s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[OnChainAnalysisAgent] Analysis complete for BTC: 4 whale transactions
+💾 Checkpoint saved: Completed Large Wallet Movement Tracking
+  → Executing: Scalping Signal Synthesis (strategy_generator)
+    [strategy_generator] Processing: Synthesize market indicators (EMA crossovers), sentiment spikes, and on-chain liquidity flows. Identify specific 'Trigger Zones' for entry. Look for confluence between 5m RSI divergence and high order book buy-side pressure.
+[StrategyGeneratorAgent] Processing: Synthesize market indicators (EMA crossovers), sentiment spikes, and on-chain liquidity flows. Identify specific 'Trigger Zones' for entry. Look for confluence between 5m RSI divergence and high order book buy-side pressure.
+[StrategyGeneratorAgent] Gemini analysis failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.350019562s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[StrategyGeneratorAgent] Strategy generated for BTC: HOLD (60% confidence)
+  → Executing: Execution Parameters and Risk Mitigation (strategy_generator)
+    [strategy_generator] Processing: Define precise entry, Take-Profit (TP), and Stop-Loss (SL) levels for a BTC scalp. Calculate position sizing based on a maximum 1% account risk and current ATR (Average True Range) to account for high-frequency volatility.
+[StrategyGeneratorAgent] Processing: Define precise entry, Take-Profit (TP), and Stop-Loss (SL) levels for a BTC scalp. Calculate position sizing based on a maximum 1% account risk and current ATR (Average True Range) to account for high-frequency volatility.
+[StrategyGeneratorAgent] Gemini analysis failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.257179101s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[StrategyGeneratorAgent] Strategy generated for BTC: HOLD (60% confidence)
+💡 Phase 3: Synthesizing insights...
+❌ Task 01ea336a-2d4f-4b89-970a-a5904cc515df failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 29.173333771s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Context for SOLUSD closed and cleaned up

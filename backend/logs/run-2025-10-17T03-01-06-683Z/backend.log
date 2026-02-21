@@ -1,0 +1,269 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-10-17T03-01-06-683Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1760670157545-wv90satsa subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760670157545-wv90satsa)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 109125.07 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $109125.07 at 2025-10-17T03:02:59.110Z
+[ConnectRpcService] Price update for BTCUSD: $109125.07 at 2025-10-17T03:02:59.907Z
+[ConnectRpcService] Price update for BTCUSD: $109128.68 at 2025-10-17T03:03:02.329Z
+[ConnectRpcService] Client client-1760670184970-shemfwksm subscribing to ETHUSD
+[ConnectRpcService] Starting scraping for ETHUSD
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[scraper] Successfully loaded TradingView page for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $109136.09 at 2025-10-17T03:03:10.376Z
+[scraper] Started scraping ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760670184970-shemfwksm)
+[ConnectRpcService] Stream established for ETHUSD, waiting for first price update
+[scraper] Got immediate price 3931.46 for ETHUSD
+[ConnectRpcService] Price update for ETHUSD: $3931.46 at 2025-10-17T03:03:13.167Z
+[ConnectRpcService] Price update for ETHUSD: $3931.46 at 2025-10-17T03:03:13.853Z
+[ConnectRpcService] Price update for BTCUSD: $109131.8 at 2025-10-17T03:03:17.600Z
+[ConnectRpcService] Price update for ETHUSD: $3931.19 at 2025-10-17T03:03:18.895Z
+[ConnectRpcService] Price update for BTCUSD: $109137.26 at 2025-10-17T03:03:18.919Z
+[ConnectRpcService] Price update for BTCUSD: $109127.95 at 2025-10-17T03:03:23.922Z
+[ConnectRpcService] Price update for ETHUSD: $3931.52 at 2025-10-17T03:03:24.083Z
+[ConnectRpcService] Price update for ETHUSD: $3931.62 at 2025-10-17T03:03:33.179Z
+[ConnectRpcService] Price update for ETHUSD: $3931.31 at 2025-10-17T03:03:41.074Z
+[ConnectRpcService] Price update for ETHUSD: $3931.22 at 2025-10-17T03:03:43.545Z
+[ConnectRpcService] Price update for BTCUSD: $109127.91 at 2025-10-17T03:03:46.708Z
+[ConnectRpcService] Price update for ETHUSD: $3932.41 at 2025-10-17T03:03:49.377Z
+[scraper] Page closed for BTCUSD, stopping scraper
+[scraper] Scraping loop ended for BTCUSD
+[ConnectRpcService] Client client-1760670184970-shemfwksm disconnected from ETHUSD
+[ConnectRpcService] Client client-1760670184970-shemfwksm disconnected, stopping stream for ETHUSD
+[ConnectRpcService] Handling client disconnect for client-1760670184970-shemfwksm
+[ConnectRpcService] Removed client client-1760670184970-shemfwksm from ETHUSD subscription
+[ConnectRpcService] No more clients for ETHUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for ETHUSD
+[scraper] Stopping scraper for ETHUSD
+[scraper] Page closed for ETHUSD
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Closed context for ETHUSD
+[scraper] Context closed for ETHUSD
+[ConnectRpcService] Scraper stopped and browser closed for ETHUSD
+[ConnectRpcService] Cleaned up client client-1760670184970-shemfwksm for symbol ETHUSD
+[scraper] Scraping loop ended for ETHUSD
+[ConnectRpcService] Client client-1760670157545-wv90satsa disconnected from BTCUSD
+[ConnectRpcService] Client client-1760670157545-wv90satsa disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760670157545-wv90satsa
+[ConnectRpcService] Removed client client-1760670157545-wv90satsa from BTCUSD subscription
+[ConnectRpcService] No more clients for BTCUSD, performing immediate cleanup
+[ConnectRpcService] Stopping scraping for BTCUSD
+[scraper] Stopping scraper for BTCUSD
+[scraper] Page closed for BTCUSD
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Closed context for BTCUSD
+[scraper] Context closed for BTCUSD
+[ConnectRpcService] Scraper stopped and browser closed for BTCUSD
+[ConnectRpcService] Cleaned up client client-1760670157545-wv90satsa for symbol BTCUSD
+[ConnectRpcService] Client client-1760670309356-1hl09pwcq subscribing to BTCUSD
+[ConnectRpcService] Starting scraping for BTCUSD
+[browserManager] Created new context for BTCUSD
+[scraper] Opening https://www.tradingview.com/symbols/BTCUSD/?exchange=BINANCE for BTCUSD
+[scraper] Successfully loaded TradingView page for BTCUSD
+[scraper] Started scraping BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760670309356-1hl09pwcq)
+[ConnectRpcService] Stream established for BTCUSD, waiting for first price update
+[scraper] Got immediate price 109078.12 for BTCUSD
+[ConnectRpcService] Price update for BTCUSD: $109078.12 at 2025-10-17T03:05:25.107Z
+[ConnectRpcService] Price update for BTCUSD: $109083.64 at 2025-10-17T03:05:25.825Z
+[ConnectRpcService] Price update for BTCUSD: $109076.39 at 2025-10-17T03:05:31.814Z
+[ConnectRpcService] Client client-1760670336450-c6tvv7zwv subscribing to ETHUSD
+[ConnectRpcService] Starting scraping for ETHUSD
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $109070.86 at 2025-10-17T03:05:37.554Z
+[ConnectRpcService] Price update for BTCUSD: $109070.03 at 2025-10-17T03:05:45.253Z
+[ConnectRpcService] Price update for BTCUSD: $109056.54 at 2025-10-17T03:05:47.863Z
+[ConnectRpcService] Price update for BTCUSD: $109000.97 at 2025-10-17T03:06:00.916Z
+[scraper] Successfully loaded TradingView page for ETHUSD
+[scraper] Validation failed for ETHUSD: Error: Price selectors not found (title: ETHUSD — Ethereum Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for ETHUSD: Error: Price selectors not found (title: ETHUSD — Ethereum Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for ETHUSD: Error: Price selectors not found (title: ETHUSD — Ethereum Price Chart — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Price update for BTCUSD: $108994.45 at 2025-10-17T03:06:13.219Z
+[ConnectRpcService] Client client-1760670380675-enqx0o0xf subscribing to ETHUSD
+[ConnectRpcService] Starting scraping for ETHUSD
+[browserManager] Created new context for ETHUSD
+[scraper] Opening https://www.tradingview.com/symbols/ETHUSD/?exchange=BINANCE for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $109004.74 at 2025-10-17T03:06:21.588Z
+[scraper] Successfully loaded TradingView page for ETHUSD
+[ConnectRpcService] Price update for BTCUSD: $108989.43 at 2025-10-17T03:06:24.047Z
+[scraper] Started scraping ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760670380675-enqx0o0xf)
+[ConnectRpcService] Stream established for ETHUSD, waiting for first price update
+[ConnectRpcService] Price update for BTCUSD: $109010.65 at 2025-10-17T03:06:32.349Z
+[scraper] Got immediate price 3926.61 for ETHUSD
+[ConnectRpcService] Price update for ETHUSD: $3926.61 at 2025-10-17T03:06:32.411Z
+[ConnectRpcService] Price update for ETHUSD: $3926.61 at 2025-10-17T03:06:33.204Z
+[ConnectRpcService] Price update for ETHUSD: $3926.56 at 2025-10-17T03:06:36.149Z
+[ConnectRpcService] Price update for BTCUSD: $109001.5 at 2025-10-17T03:06:38.043Z
+[ConnectRpcService] Price update for BTCUSD: $108996.04 at 2025-10-17T03:06:56.552Z
+[ConnectRpcService] Price update for ETHUSD: $3925.33 at 2025-10-17T03:06:56.601Z
+[ConnectRpcService] Price update for ETHUSD: $3923.73 at 2025-10-17T03:07:03.517Z
+[ConnectRpcService] Price update for BTCUSD: $108984.09 at 2025-10-17T03:07:04.582Z
+[ConnectRpcService] Price update for BTCUSD: $108985.94 at 2025-10-17T03:07:05.689Z
+[ConnectRpcService] Price update for BTCUSD: $108974.65 at 2025-10-17T03:07:14.800Z
+[ConnectRpcService] Price update for BTCUSD: $108984.08 at 2025-10-17T03:07:20.548Z
+[ConnectRpcService] Client client-1760670442816-w95f6gmm2 subscribing to BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760670442816-w95f6gmm2)
+[ConnectRpcService] Sending cached price for BTCUSD to client client-1760670442816-w95f6gmm2: $108984.08
+[ConnectRpcService] Price update for BTCUSD: $108992.18 at 2025-10-17T03:07:25.241Z
+[ConnectRpcService] Client client-1760670446847-6bxdw5n9z subscribing to ETHUSD
+[ConnectRpcService] Creating price stream for ETHUSD (client: client-1760670446847-6bxdw5n9z)
+[ConnectRpcService] Sending cached price for ETHUSD to client client-1760670446847-6bxdw5n9z: $3923.73
+[ConnectRpcService] Price update for BTCUSD: $109003.2 at 2025-10-17T03:07:28.214Z
+[ConnectRpcService] Client client-1760670446847-6bxdw5n9z disconnected from ETHUSD
+[ConnectRpcService] Client client-1760670446847-6bxdw5n9z disconnected, stopping stream for ETHUSD
+[ConnectRpcService] Handling client disconnect for client-1760670446847-6bxdw5n9z
+[ConnectRpcService] Removed client client-1760670446847-6bxdw5n9z from ETHUSD subscription
+[ConnectRpcService] Cleaned up client client-1760670446847-6bxdw5n9z for symbol ETHUSD
+[ConnectRpcService] Client client-1760670442816-w95f6gmm2 disconnected from BTCUSD
+[ConnectRpcService] Client client-1760670442816-w95f6gmm2 disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760670442816-w95f6gmm2
+[ConnectRpcService] Removed client client-1760670442816-w95f6gmm2 from BTCUSD subscription
+[ConnectRpcService] Cleaned up client client-1760670442816-w95f6gmm2 for symbol BTCUSD
+[ConnectRpcService] Price update for ETHUSD: $3924.16 at 2025-10-17T03:07:32.922Z
+[ConnectRpcService] Client client-1760670460423-xk33xa9sk subscribing to BTCUSD
+[ConnectRpcService] Creating price stream for BTCUSD (client: client-1760670460423-xk33xa9sk)
+[ConnectRpcService] Sending cached price for BTCUSD to client client-1760670460423-xk33xa9sk: $109003.2
+[ConnectRpcService] Price update for BTCUSD: $109008.65 at 2025-10-17T03:07:42.399Z
+[ConnectRpcService] Client client-1760670460423-xk33xa9sk disconnected from BTCUSD
+[ConnectRpcService] Client client-1760670460423-xk33xa9sk disconnected, stopping stream for BTCUSD
+[ConnectRpcService] Handling client disconnect for client-1760670460423-xk33xa9sk
+[ConnectRpcService] Removed client client-1760670460423-xk33xa9sk from BTCUSD subscription
+[ConnectRpcService] Cleaned up client client-1760670460423-xk33xa9sk for symbol BTCUSD
+[ConnectRpcService] Price update for ETHUSD: $3924.44 at 2025-10-17T03:07:47.178Z
+[ConnectRpcService] Price update for BTCUSD: $109015.95 at 2025-10-17T03:07:47.223Z
+[ConnectRpcService] Price update for BTCUSD: $109018.6 at 2025-10-17T03:07:49.564Z
+[ConnectRpcService] Price update for BTCUSD: $109025.91 at 2025-10-17T03:08:11.359Z
+[ConnectRpcService] Price update for BTCUSD: $109037.87 at 2025-10-17T03:08:15.889Z
+[ConnectRpcService] Price update for ETHUSD: $3923.54 at 2025-10-17T03:08:18.230Z
+[ConnectRpcService] Price update for BTCUSD: $109045.17 at 2025-10-17T03:08:25.077Z
+[ConnectRpcService] Price update for ETHUSD: $3923.68 at 2025-10-17T03:08:26.206Z
+[ConnectRpcService] Price update for BTCUSD: $109048.77 at 2025-10-17T03:08:30.707Z
+[ConnectRpcService] Price update for BTCUSD: $109056.13 at 2025-10-17T03:08:41.273Z
+[ConnectRpcService] Price update for ETHUSD: $3924.79 at 2025-10-17T03:09:00.575Z
+[ConnectRpcService] Price update for BTCUSD: $109059.78 at 2025-10-17T03:09:15.318Z
+[ConnectRpcService] Price update for ETHUSD: $3926.66 at 2025-10-17T03:09:16.483Z
+[ConnectRpcService] Price update for BTCUSD: $109088.03 at 2025-10-17T03:09:19.878Z
+[ConnectRpcService] Price update for BTCUSD: $109089.01 at 2025-10-17T03:09:23.859Z
+[ConnectRpcService] Price update for BTCUSD: $109077.07 at 2025-10-17T03:09:29.775Z
+[ConnectRpcService] Price update for BTCUSD: $109077.99 at 2025-10-17T03:09:37.799Z
+[ConnectRpcService] Price update for BTCUSD: $109067.09 at 2025-10-17T03:09:40.138Z
+[ConnectRpcService] Price update for ETHUSD: $3926.87 at 2025-10-17T03:09:42.405Z
+[ConnectRpcService] Price update for BTCUSD: $109056.13 at 2025-10-17T03:09:45.942Z
+[ConnectRpcService] Price update for BTCUSD: $109039.81 at 2025-10-17T03:09:53.967Z
+[ConnectRpcService] Price update for BTCUSD: $109043.55 at 2025-10-17T03:09:56.366Z
+[ConnectRpcService] Price update for BTCUSD: $109039.82 at 2025-10-17T03:10:02.005Z
+[ConnectRpcService] Price update for ETHUSD: $3926.56 at 2025-10-17T03:10:03.140Z
+[ConnectRpcService] Price update for BTCUSD: $109074.4 at 2025-10-17T03:10:07.677Z
+[ConnectRpcService] Price update for BTCUSD: $109089.64 at 2025-10-17T03:10:15.746Z
+[ConnectRpcService] Price update for ETHUSD: $3926.76 at 2025-10-17T03:10:15.755Z
+[ConnectRpcService] Price update for BTCUSD: $109092.65 at 2025-10-17T03:10:20.530Z
+[ConnectRpcService] Price update for ETHUSD: $3927.85 at 2025-10-17T03:10:21.691Z
+[ConnectRpcService] Price update for BTCUSD: $109081.75 at 2025-10-17T03:10:25.590Z
+[ConnectRpcService] Price update for ETHUSD: $3928.49 at 2025-10-17T03:10:31.138Z
+[ConnectRpcService] Price update for BTCUSD: $109074.41 at 2025-10-17T03:10:31.279Z
+[ConnectRpcService] Price update for BTCUSD: $109074.4 at 2025-10-17T03:10:32.435Z
+[ConnectRpcService] Price update for BTCUSD: $109059.78 at 2025-10-17T03:10:37.082Z
+[ConnectRpcService] Price update for BTCUSD: $109060.9 at 2025-10-17T03:10:41.182Z
+[ConnectRpcService] Price update for ETHUSD: $3927.02 at 2025-10-17T03:10:58.487Z
+[ConnectRpcService] Price update for BTCUSD: $109068.91 at 2025-10-17T03:10:59.632Z
+[ConnectRpcService] Price update for BTCUSD: $109063.44 at 2025-10-17T03:11:04.222Z
+[ConnectRpcService] Price update for BTCUSD: $109056.13 at 2025-10-17T03:11:06.585Z
+[ConnectRpcService] Price update for ETHUSD: $3926.28 at 2025-10-17T03:11:15.836Z
+[ConnectRpcService] Price update for BTCUSD: $109025.91 at 2025-10-17T03:11:15.846Z
+[ConnectRpcService] Price update for BTCUSD: $109022.25 at 2025-10-17T03:11:24.247Z
+[ConnectRpcService] Price update for ETHUSD: $3924 at 2025-10-17T03:11:26.500Z
+[ConnectRpcService] Price update for BTCUSD: $109040.52 at 2025-10-17T03:11:31.274Z
+[ConnectRpcService] Price update for ETHUSD: $3924.32 at 2025-10-17T03:11:35.881Z
+[ConnectRpcService] Price update for BTCUSD: $109044.52 at 2025-10-17T03:12:03.797Z
+[ConnectRpcService] Price update for BTCUSD: $109060.22 at 2025-10-17T03:12:08.402Z
+[ConnectRpcService] Price update for ETHUSD: $3924.26 at 2025-10-17T03:12:12.917Z
+[ConnectRpcService] Price update for BTCUSD: $109060.67 at 2025-10-17T03:12:14.026Z
+[ConnectRpcService] Price update for BTCUSD: $109067.95 at 2025-10-17T03:12:23.320Z
+[ConnectRpcService] Price update for BTCUSD: $109079.18 at 2025-10-17T03:12:32.613Z
+[ConnectRpcService] Price update for ETHUSD: $3926.08 at 2025-10-17T03:12:42.777Z
+[ConnectRpcService] Price update for BTCUSD: $109081.63 at 2025-10-17T03:12:47.358Z
+[ConnectRpcService] Price update for BTCUSD: $109097.99 at 2025-10-17T03:12:54.163Z
+[ConnectRpcService] Price update for BTCUSD: $109098.96 at 2025-10-17T03:12:55.332Z
+[ConnectRpcService] Price update for BTCUSD: $109092.04 at 2025-10-17T03:13:00.062Z
+[ConnectRpcService] Price update for ETHUSD: $3928.06 at 2025-10-17T03:13:16.184Z
+[ConnectRpcService] Price update for ETHUSD: $3929.09 at 2025-10-17T03:13:27.133Z
+[ConnectRpcService] Price update for ETHUSD: $3929.15 at 2025-10-17T03:13:45.012Z
+[ConnectRpcService] Price update for BTCUSD: $109104.47 at 2025-10-17T03:13:56.018Z
+[ConnectRpcService] Price update for ETHUSD: $3929.09 at 2025-10-17T03:14:12.112Z
+[ConnectRpcService] Price update for BTCUSD: $109098.83 at 2025-10-17T03:14:12.194Z
+[ConnectRpcService] Price update for BTCUSD: $109111.84 at 2025-10-17T03:14:19.215Z
+[ConnectRpcService] Price update for ETHUSD: $3928.22 at 2025-10-17T03:14:20.463Z
+[ConnectRpcService] Price update for BTCUSD: $109118.54 at 2025-10-17T03:14:24.697Z
+[ConnectRpcService] Price update for ETHUSD: $3927.1 at 2025-10-17T03:14:25.968Z
+[ConnectRpcService] Price update for BTCUSD: $109108.65 at 2025-10-17T03:14:33.741Z
+[ConnectRpcService] Price update for BTCUSD: $109118.23 at 2025-10-17T03:14:54.186Z
+[ConnectRpcService] Price update for BTCUSD: $109118.17 at 2025-10-17T03:15:16.103Z
+[ConnectRpcService] Price update for BTCUSD: $109117.96 at 2025-10-17T03:15:25.342Z
+[ConnectRpcService] Price update for BTCUSD: $109112.61 at 2025-10-17T03:15:35.584Z
+[ConnectRpcService] Price update for BTCUSD: $109109.28 at 2025-10-17T03:15:43.475Z
+[ConnectRpcService] Price update for ETHUSD: $3928.29 at 2025-10-17T03:15:44.923Z
+[ConnectRpcService] Price update for BTCUSD: $109085.59 at 2025-10-17T03:15:49.994Z
+[ConnectRpcService] Price update for BTCUSD: $109085.58 at 2025-10-17T03:16:03.919Z
+[ConnectRpcService] Price update for BTCUSD: $109087.39 at 2025-10-17T03:16:16.575Z
+[ConnectRpcService] Price update for ETHUSD: $3928.12 at 2025-10-17T03:16:20.010Z
+[ConnectRpcService] Price update for BTCUSD: $109098.32 at 2025-10-17T03:16:22.299Z
+[ConnectRpcService] Price update for BTCUSD: $109104.94 at 2025-10-17T03:16:28.152Z
+[ConnectRpcService] Price update for BTCUSD: $109102.14 at 2025-10-17T03:16:36.029Z
+[ConnectRpcService] Price update for ETHUSD: $3929.32 at 2025-10-17T03:16:41.703Z
+[ConnectRpcService] Price update for BTCUSD: $109105.63 at 2025-10-17T03:16:42.890Z
+[ConnectRpcService] Price update for BTCUSD: $109112.91 at 2025-10-17T03:16:49.878Z
+[ConnectRpcService] Price update for BTCUSD: $109115.7 at 2025-10-17T03:16:55.751Z
+[ConnectRpcService] Price update for BTCUSD: $109115.71 at 2025-10-17T03:16:56.894Z
+[ConnectRpcService] Price update for ETHUSD: $3930.64 at 2025-10-17T03:16:59.345Z
+[ConnectRpcService] Price update for BTCUSD: $109114.78 at 2025-10-17T03:17:02.887Z
+[ConnectRpcService] Price update for BTCUSD: $109116.64 at 2025-10-17T03:17:08.780Z
+[ConnectRpcService] Price update for ETHUSD: $3931.98 at 2025-10-17T03:17:12.167Z
+[ConnectRpcService] Price update for BTCUSD: $109148.91 at 2025-10-17T03:17:13.394Z
+[ConnectRpcService] Price update for ETHUSD: $3932.31 at 2025-10-17T03:17:19.788Z
+[ConnectRpcService] Price update for BTCUSD: $109149.77 at 2025-10-17T03:17:21.967Z
+[ConnectRpcService] Price update for ETHUSD: $3934.66 at 2025-10-17T03:17:26.348Z
+[ConnectRpcService] Price update for BTCUSD: $109147.83 at 2025-10-17T03:17:29.788Z
+[ConnectRpcService] Price update for ETHUSD: $3934.8 at 2025-10-17T03:17:34.246Z
+[ConnectRpcService] Price update for BTCUSD: $109156.14 at 2025-10-17T03:17:36.504Z
+[ConnectRpcService] Price update for ETHUSD: $3933.98 at 2025-10-17T03:17:37.543Z
+[ConnectRpcService] Price update for BTCUSD: $109139.68 at 2025-10-17T03:17:42.019Z
+[ConnectRpcService] Price update for ETHUSD: $3932.69 at 2025-10-17T03:17:43.119Z
+[ConnectRpcService] Price update for BTCUSD: $109140.6 at 2025-10-17T03:17:43.128Z
+[ConnectRpcService] Price update for ETHUSD: $3932.36 at 2025-10-17T03:17:50.903Z
+[ConnectRpcService] Price update for BTCUSD: $109125.99 at 2025-10-17T03:17:51.991Z
+[ConnectRpcService] Price update for BTCUSD: $109126.93 at 2025-10-17T03:17:57.694Z
+[ConnectRpcService] Price update for BTCUSD: $109137.87 at 2025-10-17T03:18:06.534Z
+[ConnectRpcService] Price update for ETHUSD: $3931.21 at 2025-10-17T03:18:08.703Z
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Context for BTCUSD closed and cleaned up
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Context for ETHUSD closed and cleaned up
+[browserManager] Browser disconnected, will restart on next request
+[scraper] Page closed for BTCUSD, stopping scraper
+[scraper] Scraping loop ended for BTCUSD
+[scraper] Page closed for ETHUSD, stopping scraper
+[scraper] Scraping loop ended for ETHUSD

@@ -1,0 +1,16 @@
+[logging] Writing backend logs to: C:\Users\harsh\LLMProjects\Real Time Crypto Currency Scrapper\Real-Time-Crypto-Stream\backend\logs\run-2026-02-21T20-14-26-209Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/crypto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+📊 Starting analysis task: Analyze Bitcoin for the next 30 minutes and identify trading opportunities
+✅ Market Monitor Agent initialized
+✅ News Sentiment Agent initialized
+✅ On-Chain Analysis Agent initialized
+✅ Strategy Generator Agent initialized
+✅ Coordinator Agent initialized with NVIDIA Nemotron
+🚀 Starting Marathon Task: 88b7e19f-5763-48f8-9091-aa2599cdab71
+📋 Goal: Analyze Bitcoin for the next 30 minutes and identify trading opportunities
+🧠 Phase 1: Planning with NVIDIA Nemotron...
+[browserManager] Received SIGINT, cleaning up browser resources...
