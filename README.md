@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🚀 Real-Time Crypto Stream
+# 🚀 CryptoNexus
 
-### AI-Powered Cryptocurrency Analysis & Real-Time Price Streaming Platform
+### AI-Powered Multi-Agent Cryptocurrency Intelligence & Real-Time Streaming Platform
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
