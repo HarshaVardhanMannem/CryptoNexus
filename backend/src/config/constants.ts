@@ -31,7 +31,7 @@ export const CONFIG = {
   CORS_ORIGIN: process.env.FRONTEND_URL || 'http://localhost:3000',
 
   // NVIDIA AI Configuration
-  NVIDIA_API_KEY: process.env.NVIDIA_API_KEY || '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',
+  NVIDIA_API_KEY: process.env.NVIDIA_API_KEY || '',
   NVIDIA_MODEL: process.env.NVIDIA_MODEL || 'nvidia/nvidia-nemotron-nano-9b-v2',
   NVIDIA_BASE_URL: process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1',
   NVIDIA_MAX_TOKENS: parseInt(process.env.NVIDIA_MAX_TOKENS || '2048'),

@@ -1,4 +1,9 @@
-node_modules   
+node_modules
 .next/
 frontend/.next/
 logs/
+.env
+*.env
+dist/
+backend/dist/
+backend/logs/
