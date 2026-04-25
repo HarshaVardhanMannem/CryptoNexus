@@ -6,10 +6,6 @@ import {
     Subtask,
     Checkpoint,
     AgentType,
-    MarketAnalysis,
-    SentimentReport,
-    OnChainReport,
-    TradingStrategy
 } from '../types/agent.types';
 import { v4 as uuidv4 } from 'uuid';
 import { MarketMonitorAgent } from './MarketMonitorAgent';
@@ -17,9 +13,13 @@ import { NewsSentimentAgent } from './NewsSentimentAgent';
 import { OnChainAnalysisAgent } from './OnChainAnalysisAgent';
 import { StrategyGeneratorAgent } from './StrategyGeneratorAgent';
 import { aiRateLimiter } from '../utils/rateLimiter';
+import { extractSymbol } from '../utils/symbols';
+import { EventEmitter } from 'events';
+import type { ToolCallRecord } from '../tools';
+import { getLLMClient } from '../config/llmClient';
+import { observer } from '../observability';
 
-
-export class CoordinatorAgent {
+export class CoordinatorAgent extends EventEmitter {
     private openai: OpenAI;
     private activeTasks: Map<string, TaskState> = new Map();
     private marketMonitorAgent: MarketMonitorAgent;
@@ -28,31 +28,24 @@ export class CoordinatorAgent {
     private strategyGeneratorAgent: StrategyGeneratorAgent;
 
     constructor() {
-        if (!CONFIG.NVIDIA_API_KEY) {
-            throw new Error('NVIDIA_API_KEY is required for Coordinator Agent');
-        }
+        super();
 
-        this.openai = new OpenAI({
-            apiKey: CONFIG.NVIDIA_API_KEY,
-            baseURL: CONFIG.NVIDIA_BASE_URL,
-        });
+        this.openai = getLLMClient();
 
-        // Initialize specialized agents
         this.marketMonitorAgent = new MarketMonitorAgent();
         this.newsSentimentAgent = new NewsSentimentAgent();
         this.onChainAnalysisAgent = new OnChainAnalysisAgent();
         this.strategyGeneratorAgent = new StrategyGeneratorAgent();
 
-        console.log('✅ Coordinator Agent initialized with NVIDIA Nemotron');
+        console.log('[CoordinatorAgent] Initialized with parallel execution support');
     }
 
     /**
-     * Main entry point: Execute a marathon task that spans hours
+     * Start a marathon task in the background. Returns the taskId immediately.
+     * Listen to events for progress updates.
      */
-    async executeMarathonTask(goal: string): Promise<TaskState> {
+    startMarathonTask(goal: string): string {
         const taskId = uuidv4();
-        console.log(`🚀 Starting Marathon Task: ${taskId}`);
-        console.log(`📋 Goal: ${goal}`);
 
         const taskState: TaskState = {
             taskId,
@@ -62,372 +55,570 @@ export class CoordinatorAgent {
             status: TaskStatus.PLANNING,
             startTime: new Date(),
             checkpoints: [],
-            selfCorrectionAttempts: 0
+            selfCorrectionAttempts: 0,
         };
 
         this.activeTasks.set(taskId, taskState);
 
+        // Run in background - don't await
+        this.executeMarathonTask(taskState).catch((err) => {
+            console.error(`[CoordinatorAgent] Task ${taskId} fatal error:`, err.message);
+            taskState.status = TaskStatus.FAILED;
+            taskState.error = err.message;
+            taskState.endTime = new Date();
+            this.emitProgress(taskState, 'task_failed');
+        });
+
+        return taskId;
+    }
+
+    private async executeMarathonTask(taskState: TaskState): Promise<void> {
+        const { taskId } = taskState;
+        console.log(`[CoordinatorAgent] Starting task ${taskId}: ${taskState.goal}`);
+        this.emitProgress(taskState, 'task_started');
+
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'task_started',
+            taskId,
+            timestamp: new Date().toISOString(),
+            goal: taskState.goal,
+        });
+
         try {
-            // Phase 1: Planning with AI
-            console.log('🧠 Phase 1: Planning with NVIDIA Nemotron...');
+            // Phase 1: Planning
+            console.log('[CoordinatorAgent] Phase 1: Planning...');
+            this.emitPhase(taskState, 'planning');
             await this.planTask(taskState);
-            await this.saveCheckpoint(taskState, 'Planning completed');
+            this.saveCheckpoint(taskState, 'Planning completed');
+            this.emitProgress(taskState, 'planning_complete');
 
-            // Phase 2: Autonomous Execution
-            console.log('⚙️  Phase 2: Executing subtasks...');
+            observer.record({
+                eventId: uuidv4(),
+                eventType: 'task_planned',
+                taskId,
+                timestamp: new Date().toISOString(),
+                subtaskCount: taskState.subtasks.length,
+                subtasks: taskState.subtasks.map((st) => ({
+                    id: st.id, name: st.name, agentType: st.agentType,
+                })),
+            });
+
+            // Phase 2: Parallel Execution
+            console.log('[CoordinatorAgent] Phase 2: Executing subtasks...');
             taskState.status = TaskStatus.EXECUTING;
-            await this.executeSubtasks(taskState);
+            this.emitPhase(taskState, 'executing');
+            this.emitProgress(taskState, 'execution_started');
+            await this.executeSubtasksParallel(taskState);
 
-            // Phase 3: Deep Reasoning
-            console.log('💡 Phase 3: Synthesizing insights...');
+            // Phase 3: Strategy + Synthesis
+            console.log('[CoordinatorAgent] Phase 3: Generating strategy & synthesis...');
             taskState.status = TaskStatus.REASONING;
+            this.emitPhase(taskState, 'reasoning');
+            this.emitProgress(taskState, 'reasoning_started');
             await this.synthesizeInsights(taskState);
 
             // Phase 4: Verification
-            console.log('✓ Phase 4: Verifying findings...');
+            console.log('[CoordinatorAgent] Phase 4: Verifying...');
             taskState.status = TaskStatus.VERIFYING;
+            this.emitPhase(taskState, 'verifying');
+            this.emitProgress(taskState, 'verification_started');
             await this.verifyFindings(taskState);
 
-            // Mark as completed
+            // Done
             taskState.status = TaskStatus.COMPLETED;
             taskState.endTime = new Date();
-            await this.saveCheckpoint(taskState, 'Task completed successfully');
+            this.saveCheckpoint(taskState, 'Task completed');
+            this.emitProgress(taskState, 'task_completed');
 
-            console.log(`✅ Task ${taskId} completed in ${this.getTaskDuration(taskState)}`);
-            return taskState;
+            const durationMs = taskState.endTime.getTime() - taskState.startTime.getTime();
+            const toolCalls = taskState.subtasks.reduce(
+                (n, st: any) => n + (st.toolCallCount || 0),
+                0
+            );
+            observer.record({
+                eventId: uuidv4(),
+                eventType: 'task_completed',
+                taskId,
+                timestamp: new Date().toISOString(),
+                durationMs,
+                totalToolCalls: toolCalls,
+                totalLlmCalls: 0,
+            });
 
+            console.log(`[CoordinatorAgent] Task ${taskId} completed in ${this.getTaskDuration(taskState)}`);
         } catch (error: any) {
-            console.error(`❌ Task ${taskId} failed:`, error.message);
+            console.error(`[CoordinatorAgent] Task ${taskId} failed:`, error.message);
             taskState.status = TaskStatus.FAILED;
             taskState.error = error.message;
             taskState.endTime = new Date();
-            return taskState;
+            this.emitProgress(taskState, 'task_failed');
+
+            const durationMs = taskState.endTime.getTime() - taskState.startTime.getTime();
+            observer.record({
+                eventId: uuidv4(),
+                eventType: 'task_failed',
+                taskId,
+                timestamp: new Date().toISOString(),
+                error: error.message || String(error),
+                durationMs,
+            });
         }
     }
 
+    private emitPhase(taskState: TaskState, phase: string): void {
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'phase_change',
+            taskId: taskState.taskId,
+            timestamp: new Date().toISOString(),
+            phase,
+        });
+    }
+
     /**
-     * Phase 1: Use AI to break down the goal into actionable subtasks
+     * Phase 1: Use AI to plan subtasks
      */
     private async planTask(taskState: TaskState): Promise<void> {
+        const symbol = extractSymbol(taskState.goal);
+
         const planningPrompt = `
-You are an expert crypto market analyst coordinator. Your task is to create a detailed execution plan.
+You are a crypto analysis coordinator. Break down this goal into subtasks.
 
-User Goal: "${taskState.goal}"
+Goal: "${taskState.goal}"
+Detected symbol: ${symbol}
 
-Create a comprehensive analysis plan with the following structure:
-1. Market Monitoring Tasks - What price data, volume, and technical indicators to track
-2. News & Sentiment Tasks - What news sources and social media to scrape
-3. On-Chain Analysis Tasks - What blockchain data to examine (whale movements, exchange flows)
-4. Strategy Generation Tasks - How to synthesize all data into actionable insights
+Create subtasks as a JSON array. Each subtask should specify which agent handles it.
+Available agents: market_monitor, news_sentiment, onchain_analysis, strategy_generator
 
-For each task, specify:
-- Task name
-- Description
-- Which specialized agent should handle it (market_monitor, news_sentiment, onchain_analysis, strategy_generator)
-- Expected duration
+Rules:
+- Always include at least one market_monitor task for price/technical data
+- Always include at least one news_sentiment task for sentiment data
+- Always include at least one onchain_analysis task for on-chain data
+- Always include exactly one strategy_generator task (must run LAST, after data collection)
+- Be specific about what each task should analyze
 
-Return your plan as a JSON array of subtasks following this schema:
+Return ONLY a JSON array:
 [
-  {
-    "name": "string",
-    "description": "string",
-    "agentType": "market_monitor" | "news_sentiment" | "onchain_analysis" | "strategy_generator",
-    "estimatedDurationMinutes": number
-  }
-]
+  { "name": "task name", "description": "what to analyze for ${symbol}", "agentType": "market_monitor" },
+  ...
+]`;
 
-Important: Be specific about crypto symbols to analyze, timeframes, and data sources.
-`;
-
+        const planStart = Date.now();
         const result = await aiRateLimiter.execute(() =>
             this.openai.chat.completions.create({
-                model: CONFIG.NVIDIA_MODEL,
+                model: CONFIG.LLM_MODEL,
                 messages: [{ role: 'user', content: planningPrompt }],
-                temperature: CONFIG.NVIDIA_TEMPERATURE,
-                max_tokens: CONFIG.NVIDIA_MAX_TOKENS,
+                temperature: CONFIG.LLM_TEMPERATURE,
+                max_tokens: CONFIG.LLM_MAX_TOKENS,
             })
         );
-        const responseText = result.choices[0]?.message?.content || '';
 
-        // Extract JSON from the response (handle markdown code blocks)
+        const responseText = result.choices[0]?.message?.content || '';
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'llm_call',
+            taskId: taskState.taskId,
+            agentType: 'coordinator',
+            timestamp: new Date().toISOString(),
+            llmCallId: uuidv4(),
+            purpose: 'planning',
+            model: CONFIG.LLM_MODEL,
+            provider: CONFIG.LLM_PROVIDER,
+            promptTokens: result.usage?.prompt_tokens,
+            completionTokens: result.usage?.completion_tokens,
+            totalTokens: result.usage?.total_tokens,
+            durationMs: Date.now() - planStart,
+            status: 'ok',
+            prompt: planningPrompt.slice(0, 4000),
+            response: responseText.slice(0, 4000),
+        });
         const jsonMatch = responseText.match(/\[[\s\S]*\]/);
-        if (!jsonMatch || !jsonMatch[0]) {
-            throw new Error('Failed to generate valid task plan');
+
+        let subtaskPlans: any[];
+        if (jsonMatch) {
+            subtaskPlans = JSON.parse(jsonMatch[0]);
+        } else {
+            // Fallback: create a default plan
+            subtaskPlans = this.createDefaultPlan(symbol);
         }
 
-        const subtaskPlans = JSON.parse(jsonMatch[0]);
+        // Ensure strategy_generator is present and comes last
+        const hasStrategy = subtaskPlans.some((p: any) => p.agentType === 'strategy_generator');
+        if (!hasStrategy) {
+            subtaskPlans.push({
+                name: `Generate ${symbol} Trading Strategy`,
+                description: `Synthesize all collected data for ${symbol} and generate an actionable trading strategy with entry/exit points`,
+                agentType: 'strategy_generator',
+            });
+        }
 
-        // Convert to Subtask objects
         taskState.subtasks = subtaskPlans.map((plan: any) => ({
             id: uuidv4(),
             name: plan.name,
             description: plan.description,
             agentType: plan.agentType as AgentType,
-            status: 'pending' as const
+            status: 'pending' as const,
         }));
 
-        taskState.context.push(`Planning completed: ${taskState.subtasks.length} subtasks identified`);
-        console.log(`📝 Generated ${taskState.subtasks.length} subtasks`);
+        taskState.context.push(`Planning completed: ${taskState.subtasks.length} subtasks for ${symbol}`);
+        console.log(`[CoordinatorAgent] Planned ${taskState.subtasks.length} subtasks`);
     }
 
     /**
-     * Phase 2: Execute each subtask using specialized agents
+     * Phase 2: Execute data-collection subtasks in PARALLEL, then strategy sequentially.
      */
-    private async executeSubtasks(taskState: TaskState): Promise<void> {
-        for (const subtask of taskState.subtasks) {
-            console.log(`  → Executing: ${subtask.name} (${subtask.agentType})`);
-            subtask.status = 'in_progress';
-            subtask.startTime = new Date();
-            taskState.currentAgent = subtask.agentType;
+    private async executeSubtasksParallel(taskState: TaskState): Promise<void> {
+        // Separate data-collection tasks from strategy task
+        const dataTasks = taskState.subtasks.filter(
+            (st) => st.agentType !== AgentType.STRATEGY_GENERATOR
+        );
+        const strategyTasks = taskState.subtasks.filter(
+            (st) => st.agentType === AgentType.STRATEGY_GENERATOR
+        );
 
-            try {
-                // Dispatch to the appropriate agent
-                const result = await this.dispatchToAgent(subtask, taskState);
+        // Run all data tasks in parallel
+        console.log(`[CoordinatorAgent] Running ${dataTasks.length} data tasks in parallel...`);
 
-                subtask.result = result;
-                subtask.status = 'completed';
-                subtask.endTime = new Date();
+        const dataPromises = dataTasks.map((subtask) => this.executeSubtask(subtask, taskState));
+        const results = await Promise.allSettled(dataPromises);
 
-                // Add to context
-                taskState.context.push(`${subtask.name}: ${JSON.stringify(result).slice(0, 200)}...`);
+        // Log results
+        results.forEach((r, i) => {
+            if (r.status === 'rejected') {
+                console.error(`[CoordinatorAgent] Data task "${dataTasks[i].name}" failed:`, r.reason?.message || r.reason);
+            }
+        });
 
-                // Self-correction check after each subtask
-                const shouldAdjust = await this.evaluateProgress(taskState);
-                if (shouldAdjust.needsAdjustment && taskState.selfCorrectionAttempts < CONFIG.MAX_SELF_CORRECTION_ATTEMPTS) {
-                    console.log(`🔄 Self-correction triggered: ${shouldAdjust.reason}`);
-                    await this.adjustPlan(taskState, shouldAdjust.reason || 'Unknown reason');
-                    taskState.selfCorrectionAttempts++;
-                }
+        this.saveCheckpoint(taskState, 'Data collection completed');
+        this.emitProgress(taskState, 'data_collection_complete');
 
-            } catch (error: any) {
-                console.error(`  ❌ Subtask failed: ${error.message}`);
-                subtask.status = 'failed';
-                subtask.error = error.message;
-                subtask.endTime = new Date();
+        // Self-correction: check if too many tasks failed
+        const failures = dataTasks.filter((st) => st.status === 'failed').length;
+        if (failures >= dataTasks.length && dataTasks.length > 0) {
+            throw new Error('All data collection tasks failed');
+        }
+
+        if (failures > 0 && taskState.selfCorrectionAttempts < CONFIG.MAX_SELF_CORRECTION_ATTEMPTS) {
+            console.log(`[CoordinatorAgent] ${failures} tasks failed, attempting self-correction...`);
+            taskState.selfCorrectionAttempts++;
+            await this.retryFailedTasks(taskState);
+        }
+
+        // Run strategy tasks sequentially (they depend on collected data)
+        for (const subtask of strategyTasks) {
+            await this.executeSubtask(subtask, taskState);
+        }
+    }
+
+    private async executeSubtask(subtask: Subtask, taskState: TaskState): Promise<void> {
+        console.log(`  -> Executing: ${subtask.name} (${subtask.agentType})`);
+        subtask.status = 'in_progress';
+        subtask.startTime = new Date();
+        taskState.currentAgent = subtask.agentType;
+        this.emitProgress(taskState, 'subtask_started', { subtaskId: subtask.id });
+
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'subtask_started',
+            taskId: taskState.taskId,
+            subtaskId: subtask.id,
+            agentType: subtask.agentType,
+            timestamp: subtask.startTime.toISOString(),
+            name: subtask.name,
+            description: subtask.description,
+        });
+
+        let toolCallCount = 0;
+        const onToolCall = (record: ToolCallRecord) => {
+            toolCallCount++;
+            this.emitProgress(taskState, 'tool_call', {
+                subtaskId: subtask.id,
+                agentType: subtask.agentType,
+                toolCallId: record.id,
+                toolName: record.toolName,
+                source: record.source,
+                endpoint: record.endpoint,
+                arguments: record.arguments,
+                status: record.status,
+                error: record.error,
+                durationMs: record.durationMs,
+                requestBytes: record.requestBytes,
+                responseBytes: record.responseBytes,
+                timestamp: record.timestamp.toISOString(),
+            });
+        };
+
+        const ctx = { taskId: taskState.taskId };
+
+        try {
+            let result: any;
+            switch (subtask.agentType) {
+                case AgentType.MARKET_MONITOR:
+                    result = await this.marketMonitorAgent.execute(subtask, onToolCall, ctx);
+                    break;
+                case AgentType.NEWS_SENTIMENT:
+                    result = await this.newsSentimentAgent.execute(subtask, onToolCall, ctx);
+                    break;
+                case AgentType.ONCHAIN_ANALYSIS:
+                    result = await this.onChainAnalysisAgent.execute(subtask, onToolCall, ctx);
+                    break;
+                case AgentType.STRATEGY_GENERATOR:
+                    result = await this.strategyGeneratorAgent.execute(subtask, taskState, onToolCall);
+                    break;
+                default:
+                    result = { status: 'unsupported_agent', agentType: subtask.agentType };
             }
 
-            // Periodic checkpoints
-            if (taskState.subtasks.filter(t => t.status === 'completed').length % 3 === 0) {
-                await this.saveCheckpoint(taskState, `Completed ${subtask.name}`);
-            }
+            subtask.result = result;
+            subtask.status = 'completed';
+            subtask.endTime = new Date();
+            (subtask as any).toolCallCount = toolCallCount;
+            taskState.context.push(`${subtask.name}: ${JSON.stringify(result).slice(0, 300)}`);
+            this.emitProgress(taskState, 'subtask_completed', { subtaskId: subtask.id });
+
+            observer.record({
+                eventId: uuidv4(),
+                eventType: 'subtask_completed',
+                taskId: taskState.taskId,
+                subtaskId: subtask.id,
+                agentType: subtask.agentType,
+                timestamp: subtask.endTime.toISOString(),
+                durationMs: subtask.endTime.getTime() - (subtask.startTime?.getTime() ?? 0),
+                toolCallCount,
+            });
+        } catch (error: any) {
+            console.error(`  [FAIL] ${subtask.name}:`, error.message);
+            subtask.status = 'failed';
+            subtask.error = error.message;
+            subtask.endTime = new Date();
+            this.emitProgress(taskState, 'subtask_failed', { subtaskId: subtask.id, error: error.message });
+
+            observer.record({
+                eventId: uuidv4(),
+                eventType: 'subtask_failed',
+                taskId: taskState.taskId,
+                subtaskId: subtask.id,
+                agentType: subtask.agentType,
+                timestamp: subtask.endTime.toISOString(),
+                durationMs: subtask.endTime.getTime() - (subtask.startTime?.getTime() ?? 0),
+                error: error.message || String(error),
+            });
         }
     }
 
     /**
-     * Dispatch subtask to the appropriate specialized agent
+     * Retry failed data-collection tasks (self-correction).
      */
-    private async dispatchToAgent(subtask: Subtask, taskState: TaskState): Promise<any> {
-        // For now, simulate agent calls - these will be replaced with actual implementations
-        console.log(`    [${subtask.agentType}] Processing: ${subtask.description}`);
+    private async retryFailedTasks(taskState: TaskState): Promise<void> {
+        const failedTasks = taskState.subtasks.filter(
+            (st) => st.status === 'failed' && st.agentType !== AgentType.STRATEGY_GENERATOR
+        );
 
-        switch (subtask.agentType) {
-            case AgentType.MARKET_MONITOR:
-                return await this.marketMonitorAgent.execute(subtask);
+        console.log(`[CoordinatorAgent] Retrying ${failedTasks.length} failed tasks...`);
 
-            case AgentType.NEWS_SENTIMENT:
-                return await this.newsSentimentAgent.execute(subtask);
-
-            case AgentType.ONCHAIN_ANALYSIS:
-                return await this.onChainAnalysisAgent.execute(subtask);
-
-            case AgentType.STRATEGY_GENERATOR:
-                return await this.strategyGeneratorAgent.execute(subtask, taskState);
-
-            default:
-                return { status: 'Not implemented yet', subtask: subtask.name };
+        for (const subtask of failedTasks) {
+            subtask.status = 'pending';
+            subtask.error = undefined;
+            await this.executeSubtask(subtask, taskState);
         }
     }
 
     /**
-     * Phase 3: Use AI to synthesize all collected data into insights
+     * Phase 3: Synthesize all collected data
      */
     private async synthesizeInsights(taskState: TaskState): Promise<void> {
         const synthesisPrompt = `
-You are an expert crypto analyst. Review all the data collected from multiple agents and synthesize key insights.
+You are an expert crypto analyst. Synthesize the following multi-agent data into a unified analysis.
 
-Original Goal: "${taskState.goal}"
+Goal: "${taskState.goal}"
 
-Data Collected:
-${taskState.context.join('\n')}
+Data collected by agents:
+${taskState.context.join('\n\n')}
 
-Provide a comprehensive synthesis that includes:
+Provide a comprehensive synthesis (500-800 words) covering:
 1. Key findings across all data sources
-2. Correlations between price movements, sentiment, and on-chain activity
+2. Correlations between price, sentiment, and on-chain activity
 3. Risk factors and contradictory signals
 4. Confidence-weighted predictions
 5. Actionable recommendations
 
-Be specific, quantitative, and cite the data sources.
-`;
+Be specific and cite the data you received.`;
 
+        const synthStart = Date.now();
         const result = await aiRateLimiter.execute(() =>
             this.openai.chat.completions.create({
-                model: CONFIG.NVIDIA_MODEL,
+                model: CONFIG.LLM_MODEL,
                 messages: [{ role: 'user', content: synthesisPrompt }],
-                temperature: CONFIG.NVIDIA_TEMPERATURE,
-                max_tokens: CONFIG.NVIDIA_MAX_TOKENS,
+                temperature: CONFIG.LLM_TEMPERATURE,
+                max_tokens: CONFIG.LLM_MAX_TOKENS,
             })
         );
+
         const insights = result.choices[0]?.message?.content || 'No insights generated';
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'llm_call',
+            taskId: taskState.taskId,
+            agentType: 'coordinator',
+            timestamp: new Date().toISOString(),
+            llmCallId: uuidv4(),
+            purpose: 'synthesis',
+            model: CONFIG.LLM_MODEL,
+            provider: CONFIG.LLM_PROVIDER,
+            promptTokens: result.usage?.prompt_tokens,
+            completionTokens: result.usage?.completion_tokens,
+            totalTokens: result.usage?.total_tokens,
+            durationMs: Date.now() - synthStart,
+            status: 'ok',
+            prompt: synthesisPrompt.slice(0, 4000),
+            response: insights.slice(0, 4000),
+        });
 
         taskState.result = {
+            ...taskState.result,
             synthesis: insights,
-            timestamp: new Date()
+            timestamp: new Date(),
         };
 
-        taskState.context.push(`Synthesis completed: ${insights.slice(0, 300)}...`);
-        console.log('💡 Insights synthesized');
+        taskState.context.push(`Synthesis completed`);
+        console.log('[CoordinatorAgent] Insights synthesized');
     }
 
     /**
-     * Phase 4: Verify findings for consistency and quality
+     * Phase 4: Verify findings
      */
     private async verifyFindings(taskState: TaskState): Promise<void> {
         const verificationPrompt = `
-You are a critical analyst reviewing crypto market analysis for accuracy and consistency.
+You are a critical analyst reviewing crypto market analysis.
 
 Analysis to verify:
-${JSON.stringify(taskState.result?.synthesis || '', null, 2)}
+${taskState.result?.synthesis || ''}
 
-Based on the data:
-${taskState.context.slice(-5).join('\n')}
+Verify:
+1. Logical consistency
+2. Overconfident predictions without evidence
+3. Missing data or gaps
+4. Suggested corrections
 
-Perform verification:
-1. Check for logical inconsistencies
-2. Identify overconfident predictions without sufficient evidence
-3. Highlight missing data or gaps in analysis
-4. Suggest corrections if needed
-
-Return a JSON object with:
+Return JSON:
 {
-  "isValid": boolean,
-  "confidenceScore": number (0-1),
-  "issues": string[],
-  "recommendations": string[]
-}
-`;
+  "isValid": true/false,
+  "confidenceScore": 0.0-1.0,
+  "issues": ["issue1"],
+  "recommendations": ["rec1"]
+}`;
 
+        const verifyStart = Date.now();
         const result = await aiRateLimiter.execute(() =>
             this.openai.chat.completions.create({
-                model: CONFIG.NVIDIA_MODEL,
+                model: CONFIG.LLM_MODEL,
                 messages: [{ role: 'user', content: verificationPrompt }],
-                temperature: CONFIG.NVIDIA_TEMPERATURE,
-                max_tokens: CONFIG.NVIDIA_MAX_TOKENS,
+                temperature: CONFIG.LLM_TEMPERATURE,
+                max_tokens: CONFIG.LLM_MAX_TOKENS,
             })
         );
-        const responseText = result.choices[0]?.message?.content || '';
 
-        // Extract JSON
+        const responseText = result.choices[0]?.message?.content || '';
+        observer.record({
+            eventId: uuidv4(),
+            eventType: 'llm_call',
+            taskId: taskState.taskId,
+            agentType: 'coordinator',
+            timestamp: new Date().toISOString(),
+            llmCallId: uuidv4(),
+            purpose: 'verification',
+            model: CONFIG.LLM_MODEL,
+            provider: CONFIG.LLM_PROVIDER,
+            promptTokens: result.usage?.prompt_tokens,
+            completionTokens: result.usage?.completion_tokens,
+            totalTokens: result.usage?.total_tokens,
+            durationMs: Date.now() - verifyStart,
+            status: 'ok',
+            prompt: verificationPrompt.slice(0, 4000),
+            response: responseText.slice(0, 4000),
+        });
         const jsonMatch = responseText.match(/\{[\s\S]*\}/);
         if (jsonMatch) {
-            const verification = JSON.parse(jsonMatch[0]);
-
-            if (taskState.result) {
-                taskState.result.verification = verification;
+            try {
+                const verification = JSON.parse(jsonMatch[0]);
+                if (taskState.result) {
+                    taskState.result.verification = verification;
+                }
+                console.log(`[CoordinatorAgent] Verification: confidence=${verification.confidenceScore}`);
+            } catch {
+                console.warn('[CoordinatorAgent] Could not parse verification JSON');
             }
-
-            console.log(`✓ Verification complete - Confidence: ${verification.confidenceScore}`);
         }
     }
 
-    /**
-     * Evaluate if the current progress needs adjustment
-     */
-    private async evaluateProgress(taskState: TaskState): Promise<{ needsAdjustment: boolean; reason?: string }> {
-        // Simple heuristic: check if recent subtasks are failing
-        const recentSubtasks = taskState.subtasks.slice(-3);
-        const failures = recentSubtasks.filter(t => t.status === 'failed').length;
-
-        if (failures >= 2) {
-            return {
-                needsAdjustment: true,
-                reason: 'Multiple recent subtask failures detected'
-            };
-        }
-
-        // Could add more sophisticated checks with AI evaluation
-        return { needsAdjustment: false };
+    private createDefaultPlan(symbol: string): any[] {
+        return [
+            {
+                name: `${symbol} Market Analysis`,
+                description: `Fetch current price, technical indicators, and market data for ${symbol}`,
+                agentType: 'market_monitor',
+            },
+            {
+                name: `${symbol} News & Sentiment`,
+                description: `Analyze latest crypto news and sentiment for ${symbol}`,
+                agentType: 'news_sentiment',
+            },
+            {
+                name: `${symbol} On-Chain Analysis`,
+                description: `Analyze on-chain metrics, exchange flows, and whale activity for ${symbol}`,
+                agentType: 'onchain_analysis',
+            },
+            {
+                name: `${symbol} Trading Strategy`,
+                description: `Generate a comprehensive trading strategy for ${symbol} based on all collected data`,
+                agentType: 'strategy_generator',
+            },
+        ];
     }
 
-    /**
-     * Adjust the execution plan based on new information
-     */
-    private async adjustPlan(taskState: TaskState, reason: string): Promise<void> {
-        console.log(`  🔄 Adjusting plan due to: ${reason}`);
-
-        const adjustmentPrompt = `
-The current analysis plan needs adjustment.
-
-Original Goal: "${taskState.goal}"
-Reason for adjustment: "${reason}"
-Current progress: ${taskState.context.slice(-3).join('; ')}
-
-Generate 1-2 new subtasks to address the issue. Return as JSON array with same schema as before.
-`;
-
-        const result = await this.openai.chat.completions.create({
-            model: CONFIG.NVIDIA_MODEL,
-            messages: [{ role: 'user', content: adjustmentPrompt }],
-            temperature: CONFIG.NVIDIA_TEMPERATURE,
-            max_tokens: CONFIG.NVIDIA_MAX_TOKENS,
-        });
-        const responseText = result.choices[0]?.message?.content || '';
-
-        const jsonMatch = responseText.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
-            const newSubtasks = JSON.parse(jsonMatch[0]);
-
-            // Add new subtasks
-            newSubtasks.forEach((plan: any) => {
-                taskState.subtasks.push({
-                    id: uuidv4(),
-                    name: plan.name,
-                    description: plan.description,
-                    agentType: plan.agentType as AgentType,
-                    status: 'pending' as const
-                });
-            });
-
-            taskState.context.push(`Plan adjusted: Added ${newSubtasks.length} corrective subtasks`);
-        }
-    }
-
-    /**
-     * Save a checkpoint for long-running tasks
-     */
-    private async saveCheckpoint(taskState: TaskState, description: string): Promise<void> {
+    private saveCheckpoint(taskState: TaskState, description: string): void {
         const checkpoint: Checkpoint = {
             id: uuidv4(),
             timestamp: new Date(),
             taskStatus: taskState.status,
-            completedSubtasks: taskState.subtasks.filter(t => t.status === 'completed').length,
+            completedSubtasks: taskState.subtasks.filter((t) => t.status === 'completed').length,
             totalSubtasks: taskState.subtasks.length,
             context: [...taskState.context],
-            metadata: { description }
+            metadata: { description },
         };
-
         taskState.checkpoints.push(checkpoint);
-        console.log(`💾 Checkpoint saved: ${description}`);
     }
 
-    /**
-     * Get human-readable task duration
-     */
+    private emitProgress(taskState: TaskState, event: string, extra?: Record<string, any>): void {
+        this.emit('progress', {
+            taskId: taskState.taskId,
+            event,
+            status: taskState.status,
+            subtasks: taskState.subtasks.map((st) => ({
+                id: st.id,
+                name: st.name,
+                status: st.status,
+                agentType: st.agentType,
+            })),
+            progress: {
+                completed: taskState.subtasks.filter((t) => t.status === 'completed').length,
+                total: taskState.subtasks.length,
+            },
+            ...extra,
+            timestamp: new Date().toISOString(),
+        });
+    }
+
     private getTaskDuration(taskState: TaskState): string {
         if (!taskState.endTime) return 'In progress';
-
-        const durationMs = taskState.endTime.getTime() - taskState.startTime.getTime();
-        const minutes = Math.floor(durationMs / 60000);
-        const seconds = Math.floor((durationMs % 60000) / 1000);
-
+        const ms = taskState.endTime.getTime() - taskState.startTime.getTime();
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
         return `${minutes}m ${seconds}s`;
     }
 
-    /**
-     * Get task status for monitoring
-     */
     getTaskStatus(taskId: string): TaskState | undefined {
         return this.activeTasks.get(taskId);
     }
-
 }
